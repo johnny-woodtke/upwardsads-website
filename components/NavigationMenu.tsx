@@ -1,3 +1,5 @@
+import Image from "next/image"
+import Link from "next/link"
 import {
   NavigationMenuContent,
   NavigationMenuItem,
@@ -9,32 +11,40 @@ import {
 
 export function NavigationMenu() {
   return (
-    <nav className="sticky top-0 flex w-full justify-center border-b backdrop-blur">
-      <NavigationMenuPrimitive>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <MenuContentContainer>
-                <NavigationMenuLink>Link</NavigationMenuLink>
-              </MenuContentContainer>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
+    <div className="sticky top-0 flex w-full justify-center border-b backdrop-blur">
+      <div className="relative flex h-24 w-full max-w-[120vh] items-center justify-center">
+        <Link href="/" className="absolute left-0 top-0 aspect-[1] h-full invert">
+          <Image src="/assets/logo.png" alt="Logo" fill objectFit="contain" />
+        </Link>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <MenuContentContainer>
-                <NavigationMenuLink>Link</NavigationMenuLink>
-              </MenuContentContainer>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenuPrimitive>
-    </nav>
+        <NavigationMenuPrimitive>
+          <NavigationMenuList>
+            <NavigationMenuItem></NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <MenuContentContainer>
+                  <NavigationMenuLink>Link</NavigationMenuLink>
+                </MenuContentContainer>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <MenuContentContainer>
+                  <NavigationMenuLink>Link</NavigationMenuLink>
+                </MenuContentContainer>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenuPrimitive>
+      </div>
+    </div>
   )
 }
 
 function MenuContentContainer({ children }: { children: React.ReactNode }) {
-  return <div className="h-24 w-48 p-4">{children}</div>
+  return <div className="h-full w-48 p-4">{children}</div>
 }
