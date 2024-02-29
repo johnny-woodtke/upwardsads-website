@@ -6,8 +6,6 @@ module.exports = {
     "next",
     "prettier",
     "react-app",
-    "react-app/jest",
-    "plugin:storybook/recommended",
     "plugin:tailwindcss/recommended",
   ],
   parserOptions: {
