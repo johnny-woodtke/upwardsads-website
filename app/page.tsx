@@ -1,9 +1,11 @@
 import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
-import { LP_GRID_ITEMS } from "@/lp-items"
+import { LP_GRID_ITEMS } from "@/lib/data/lp-items"
 
 export const metadata: Metadata = {
-  title: "Next.js Enterprise Boilerplate",
+  title: "Upwards Ads",
+  description:
+    "We are a digital marketing agency that helps local businesses grow by leveraging the power of online advertising.",
   twitter: {
     card: "summary_large_image",
   },
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
     images: [
       {
         width: 1200,
-        height: 630,
+        height: 1200,
         url: "https://upwardsads-website.vercel.app/assets/logo.png",
       },
     ],
@@ -22,8 +24,8 @@ export const metadata: Metadata = {
 export default function Web() {
   return (
     <>
-      <section className="">
-        <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
+      <section className="w-full">
+        <div className="x-4 grid py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
               Next.js Enterprise Boilerplate
@@ -46,8 +48,8 @@ export default function Web() {
           </div>
         </div>
       </section>
-      <section className="">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
+      <section className="w-full">
+        <div className="px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LP_GRID_ITEMS.map((singleItem) => (
               <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">

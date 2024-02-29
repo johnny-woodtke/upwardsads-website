@@ -11,37 +11,42 @@ import {
 
 export function NavigationMenu() {
   return (
-    <div className="sticky top-0 flex w-full justify-center border-b backdrop-blur">
-      <div className="relative flex h-24 w-full max-w-[120vh] items-center justify-center">
-        <Link href="/" className="absolute left-0 top-0 aspect-[1] h-full invert">
-          <Image src="/assets/logo.png" alt="Logo" fill objectFit="contain" />
-        </Link>
+    <>
+      <Link href="/" className="absolute left-2 top-0 aspect-[1] h-full invert">
+        <Image
+          src="/assets/logo.png"
+          alt="Logo"
+          fill
+          style={{
+            objectFit: "contain",
+          }}
+        />
+      </Link>
 
-        <NavigationMenuPrimitive>
-          <NavigationMenuList>
-            <NavigationMenuItem></NavigationMenuItem>
+      <NavigationMenuPrimitive>
+        <NavigationMenuList>
+          <NavigationMenuItem></NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <MenuContentContainer>
-                  <NavigationMenuLink>Link</NavigationMenuLink>
-                </MenuContentContainer>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <MenuContentContainer>
+                <NavigationMenuLink>Link</NavigationMenuLink>
+              </MenuContentContainer>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <MenuContentContainer>
-                  <NavigationMenuLink>Link</NavigationMenuLink>
-                </MenuContentContainer>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenuPrimitive>
-      </div>
-    </div>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Item Two</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <MenuContentContainer>
+                <NavigationMenuLink>Link</NavigationMenuLink>
+              </MenuContentContainer>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenuPrimitive>
+    </>
   )
 }
 
