@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Upwards Ads",
   description:
     "We are a digital marketing agency that helps local businesses grow by leveraging the power of online advertising.",
+  icons: {
+    icon: "/assets/logo.png",
+  },
   twitter: {
     card: "summary_large_image",
   },
