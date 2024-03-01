@@ -1,9 +1,17 @@
 import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
-import { LP_GRID_ITEMS } from "@/lp-items"
+import { LP_GRID_ITEMS } from "@/lib/data/lp-items"
+
+const TITLE = "Upwards Ads"
+
+const DESCRIPTION = "Grow your business by leveraging the power of an influential online presence."
 
 export const metadata: Metadata = {
-  title: "Next.js Enterprise Boilerplate",
+  title: TITLE,
+  description: DESCRIPTION,
+  icons: {
+    icon: "/assets/logo.png",
+  },
   twitter: {
     card: "summary_large_image",
   },
@@ -12,7 +20,7 @@ export const metadata: Metadata = {
     images: [
       {
         width: 1200,
-        height: 630,
+        height: 1200,
         url: "https://upwardsads-website.vercel.app/assets/logo.png",
       },
     ],
@@ -22,32 +30,23 @@ export const metadata: Metadata = {
 export default function Web() {
   return (
     <>
-      <section className="">
-        <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
+      <section className="w-full">
+        <div className="x-4 grid py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js Enterprise Boilerplate
+              {TITLE}
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
+              {DESCRIPTION}
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" size="lg" className="mr-3">
+            <Button href="/contact" size="lg" className="mr-3">
               Get started
-            </Button>
-            <Button
-              size="lg"
-              href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
-              variant="secondary"
-            >
-              Deploy Now
             </Button>
           </div>
         </div>
       </section>
-      <section className="">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
+      <section className="w-full">
+        <div className="px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LP_GRID_ITEMS.map((singleItem) => (
               <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">
