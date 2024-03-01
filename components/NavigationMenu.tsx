@@ -61,7 +61,11 @@ function MenuLink({ href, children }: { href: string; children: React.ReactNode 
   return (
     <Link
       href={href}
-      className={cn("flex h-full w-36 items-center justify-center text-lg font-semibold", "rounded-xl hover:border-x ")}
+      className={cn(
+        "flex h-full w-36 items-center justify-center",
+        "text-lg font-semibold",
+        "rounded-xl hover:bg-primary/10"
+      )}
     >
       {children}
     </Link>

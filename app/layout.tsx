@@ -5,8 +5,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen bg-background antialiased">
-            <NavigationMenu />
-        
+        <NavigationMenu />
         <div className="flex w-full justify-center">
           <div className="max-w-screen-xl">{children}</div>
         </div>
