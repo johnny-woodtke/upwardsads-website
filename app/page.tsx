@@ -2,10 +2,13 @@ import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { LP_GRID_ITEMS } from "@/lib/data/lp-items"
 
+const TITLE = "Upwards Ads"
+
+const DESCRIPTION = "Grow your business by leveraging the power of an influential online presence."
+
 export const metadata: Metadata = {
-  title: "Upwards Ads",
-  description:
-    "We are a digital marketing agency that helps local businesses grow by leveraging the power of online advertising.",
+  title: TITLE,
+  description: DESCRIPTION,
   icons: {
     icon: "/assets/logo.png",
   },
@@ -31,22 +34,13 @@ export default function Web() {
         <div className="x-4 grid py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js Enterprise Boilerplate
+              {TITLE}
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
+              {DESCRIPTION}
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" size="lg" className="mr-3">
+            <Button href="/contact" size="lg" className="mr-3">
               Get started
-            </Button>
-            <Button
-              size="lg"
-              href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
-              variant="secondary"
-            >
-              Deploy Now
             </Button>
           </div>
         </div>
