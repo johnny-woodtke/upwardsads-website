@@ -41,13 +41,7 @@ export function NavigationMenu() {
           <MenuLink href="/contact">Contact</MenuLink>
         </div>
 
-        <div
-          className={cn(
-            "absolute right-0 top-0 flex items-center justify-end",
-            "h-full py-2 pr-2",
-            isCollapsed ? "md:flex" : ""
-          )}
-        >
+        <div className={cn("absolute right-0 top-0", "flex items-center justify-end", "h-full py-2 pr-2")}>
           <Button href="/contact" className="max-h-full">
             Get started
           </Button>
