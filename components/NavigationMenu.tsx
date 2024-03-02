@@ -13,7 +13,7 @@ export function NavigationMenu() {
     <div className="sticky top-0 flex w-full justify-center border-b backdrop-blur">
       <div
         className={cn(
-          "relative flex h-14 w-full max-w-[120vh] items-center justify-center transition-[height] md:h-24",
+          "relative flex h-14 w-full max-w-screen-xl items-center justify-center transition-[height] md:h-24",
           isCollapsed ? "md:h-14" : "md:h-24"
         )}
       >
@@ -29,11 +29,7 @@ export function NavigationMenu() {
         </Link>
 
         <div
-          className={cn(
-            "hidden items-center justify-center md:flex md:grow",
-            "h-full py-2",
-            isCollapsed ? "md:hidden" : ""
-          )}
+          className={cn("hidden items-center justify-center md:flex", "h-full py-2", isCollapsed ? "md:hidden" : "")}
         >
           <MenuLink href="/#about">About</MenuLink>
           <MenuLink href="/#testimonials">Testimonials</MenuLink>
@@ -42,9 +38,7 @@ export function NavigationMenu() {
         </div>
 
         <div className={cn("absolute right-0 top-0", "flex items-center justify-end", "h-full py-2 pr-2")}>
-          <Button href="/contact" className="max-h-full">
-            Get started
-          </Button>
+          <Button href="/contact">Get started</Button>
         </div>
       </div>
     </div>
@@ -56,9 +50,9 @@ function MenuLink({ href, children }: { href: string; children: React.ReactNode 
     <Link
       href={href}
       className={cn(
-        "flex h-full w-36 items-center justify-center",
+        "flex h-full items-center justify-center px-4 lg:px-8",
         "text-lg font-semibold",
-        "rounded-xl hover:bg-primary/10"
+        "rounded-xl hover:bg-primary/50 hover:text-primary-foreground"
       )}
     >
       {children}
