@@ -2,19 +2,21 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useScrollDirection } from "@/components/hooks"
 import { Button } from "@/components/ui/button"
+import { useScrollDirection } from "@/hooks"
+import { MAX_WIDTH_CLASSNAME } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 export function NavigationMenu() {
   const isCollapsed = useScrollDirection() === "down"
 
   return (
-    <div className="sticky top-0 flex w-full justify-center border-b backdrop-blur">
+    <div className="sticky top-0 z-40 flex w-full justify-center border-b backdrop-blur">
       <div
         className={cn(
-          "relative flex h-14 w-full max-w-screen-xl items-center justify-center transition-[height] md:h-24",
-          isCollapsed ? "md:h-14" : "md:h-24"
+          "relative flex h-14 w-full items-center justify-center transition-[height] md:h-24",
+          isCollapsed ? "md:h-14" : "md:h-24",
+          MAX_WIDTH_CLASSNAME
         )}
       >
         <Link href="/" className="absolute left-2 top-0 aspect-[1] h-full invert">
