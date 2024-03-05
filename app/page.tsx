@@ -1,10 +1,8 @@
 import { Metadata } from "next"
+import { ReviewCarousel } from "@/components/ReviewCarousel"
 import { Button } from "@/components/ui/button"
+import { DESCRIPTION, TITLE } from "@/lib/constants"
 import { LP_GRID_ITEMS } from "@/lib/data/lp-items"
-
-const TITLE = "Upwards Ads"
-
-const DESCRIPTION = "Grow your business by leveraging the power of an influential online presence."
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -45,6 +43,13 @@ export default function Web() {
           </div>
         </div>
       </section>
+
+      <section className="w-full">
+        <div className="px-4 py-8 sm:py-16 lg:px-6">
+          <ReviewCarousel />
+        </div>
+      </section>
+
       <section className="w-full">
         <div className="px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
