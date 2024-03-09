@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Web() {
+export default function App() {
   return (
     <>
       <section className="w-full">

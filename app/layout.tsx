@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { NavigationMenu } from "@/components/NavigationMenu"
 import "@/styles/global.css"
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-black/95 bg-gradient-to-tr from-background">
