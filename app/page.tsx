@@ -82,9 +82,9 @@ export default function Web() {
       <section className="relative w-full border-b border-primary/10 sm:h-[500px]">
         <div className="absolute top-[-100px] h-0 w-0" id="testimonials" />
 
-        <div className="mx-auto h-full w-full max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
+        <div className="mx-auto h-full w-full max-w-screen-xl p-8 lg:p-16">
           <div className="flex h-full w-full flex-col items-center justify-center">
-            <h2 className="mb-8 w-full text-start text-3xl font-bold tracking-tight sm:ml-12 sm:text-4xl lg:mb-12 xl:text-5xl">
+            <h2 className="mb-8 w-full text-start text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">
               Testimonials
             </h2>
 
@@ -98,7 +98,7 @@ export default function Web() {
       <section className="relative w-full">
         <div className="absolute top-[-100px] h-0 w-0" id="services" />
 
-        <div className="mx-auto w-full max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
+        <div className="mx-auto w-full max-w-screen-xl p-8 lg:p-16">
           <div className="flex h-full w-full flex-col items-center justify-center">
             <h2 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">What we offer</h2>
 
