@@ -3,22 +3,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useScrollDirection, useScrollLocation } from "@/hooks"
 import { cn } from "@/lib/utils"
 
 export function NavigationMenu() {
-  const scrollDirection = useScrollDirection()
-  const { scrollY } = useScrollLocation()
-  const isCollapsed = scrollY > 3 && scrollDirection === "down"
-
   return (
     <div className="sticky top-0 z-40 flex w-full justify-center border-b backdrop-blur">
-      <div
-        className={cn(
-          "relative flex h-14 w-full max-w-screen-xl items-center justify-center transition-[height] md:h-24",
-          isCollapsed ? "md:h-14" : "md:h-24"
-        )}
-      >
+      <div className={cn("relative flex h-24 w-full max-w-screen-xl items-center justify-center transition-[height]")}>
         <Link href="/" className="absolute left-2 top-0 aspect-[1] h-full invert">
           <Image
             src="/assets/logo.png"
@@ -30,13 +20,13 @@ export function NavigationMenu() {
           />
         </Link>
 
-        <div
-          className={cn("hidden items-center justify-center md:flex", "h-full py-2", isCollapsed ? "md:hidden" : "")}
-        >
+        <div className={cn("flex h-full items-center justify-center py-2")}>
           <MenuLink href="/#about">About</MenuLink>
           <MenuLink href="/#testimonials">Testimonials</MenuLink>
           <MenuLink href="/#services">Services</MenuLink>
-          <MenuLink href="/contact">Contact</MenuLink>
+          <MenuLink href="/contact" className="max-md:hidden">
+            Contact
+          </MenuLink>
         </div>
 
         <div className={cn("absolute right-0 top-0", "flex items-center justify-end", "h-full py-2 pr-2")}>
@@ -47,14 +37,15 @@ export function NavigationMenu() {
   )
 }
 
-function MenuLink({ href, children }: { href: string; children: React.ReactNode }) {
+function MenuLink({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
   return (
     <Link
       href={href}
       className={cn(
         "flex h-full items-center justify-center px-4 lg:px-8",
         "text-lg font-semibold",
-        "rounded-xl hover:bg-primary/50 hover:text-primary-foreground"
+        "rounded-xl hover:bg-primary/50 hover:text-primary-foreground",
+        className
       )}
     >
       {children}

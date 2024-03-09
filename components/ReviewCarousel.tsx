@@ -16,13 +16,13 @@ export function ReviewCarousel() {
           delay: 5000,
         }),
       ]}
-      className="mx-auto max-w-[90%]"
+      className="w-full max-w-[90%]"
     >
       <CarouselContent>
         {REVIEWS.map((review, i) => {
           const { name, company, review: content, stars } = review
           return (
-            <CarouselItem key={i} className="w-0 md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={i} className="w-0 sm:basis-1/2 lg:basis-1/3">
               <div className="mx-2 flex flex-col items-center justify-center text-center">
                 <div className="mb-4 flex h-10 w-full items-center justify-center rounded-full p-1.5 text-blue-700">
                   {[...Array(stars)].map((_, i) => (
