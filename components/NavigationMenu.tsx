@@ -3,11 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useScrollDirection } from "@/hooks"
+import { useScrollDirection, useScrollLocation } from "@/hooks"
 import { cn } from "@/lib/utils"
 
 export function NavigationMenu() {
-  const isCollapsed = useScrollDirection() === "down"
+  const scrollDirection = useScrollDirection()
+  const { scrollY } = useScrollLocation()
+  const isCollapsed = scrollY > 3 && scrollDirection === "down"
 
   return (
     <div className="sticky top-0 z-40 flex w-full justify-center border-b backdrop-blur">
