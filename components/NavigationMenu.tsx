@@ -9,7 +9,7 @@ export function NavigationMenu() {
   return (
     <div className="sticky top-0 z-40 flex w-full justify-center border-b backdrop-blur">
       <div className={cn("relative flex h-24 w-full max-w-screen-xl items-center justify-center transition-[height]")}>
-        <Link href="/" className="absolute left-2 top-0 aspect-[1] h-full invert">
+        <Link href="/" className="absolute left-3 top-0 aspect-[1] h-full invert">
           <Image
             src="/assets/logo.png"
             alt="Logo"
@@ -20,7 +20,7 @@ export function NavigationMenu() {
           />
         </Link>
 
-        <div className={cn("flex h-full items-center justify-center py-2")}>
+        <div className={cn("flex h-full items-center justify-center py-2 max-sm:hidden")}>
           <MenuLink href="/#about">About</MenuLink>
           <MenuLink href="/#testimonials">Testimonials</MenuLink>
           <MenuLink href="/#services">Services</MenuLink>
@@ -29,7 +29,7 @@ export function NavigationMenu() {
           </MenuLink>
         </div>
 
-        <div className={cn("absolute right-0 top-0", "flex items-center justify-end", "h-full py-2 pr-2")}>
+        <div className={cn("absolute right-1 top-0", "flex items-center justify-end", "h-full py-2 pr-2")}>
           <Button href="/contact">Get started</Button>
         </div>
       </div>
