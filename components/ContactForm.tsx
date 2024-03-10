@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { isPossiblePhoneNumber } from "libphonenumber-js"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { SubmitButton, TextInput } from "@/components/Form"
+import { PhoneInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { NAME_REGEX } from "@/lib/constants"
 
@@ -74,6 +74,8 @@ export function ContactForm() {
             placeholder="johndoe@gmail.com"
             pattern={undefined}
           />
+
+          <PhoneInput control={control} name="phone" label="Phone Number" />
 
           <SubmitButton>Submit</SubmitButton>
         </div>

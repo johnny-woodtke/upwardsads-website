@@ -23,7 +23,7 @@ export function TextInput<T extends FieldValues>({
 }: TextInputProps<T>) {
   const [isFocused, setIsFocused] = useState(false)
   return (
-    <FormField<T>
+    <FormField
       control={control}
       name={name}
       render={({ field, fieldState }) => {
