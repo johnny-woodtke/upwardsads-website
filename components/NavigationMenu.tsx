@@ -8,7 +8,11 @@ import { cn } from "@/lib/utils"
 export function NavigationMenu() {
   return (
     <div className="sticky top-0 z-40 flex w-full justify-center border-b backdrop-blur">
-      <div className={cn("relative flex h-24 w-full max-w-screen-xl items-center justify-center transition-[height]")}>
+      <div
+        className={cn(
+          "relative flex h-16 w-full max-w-screen-xl items-center justify-center transition-[height] sm:h-24"
+        )}
+      >
         <Link href="/" className="absolute left-3 top-0 aspect-[1] h-full invert">
           <Image
             src="/assets/logo.png"

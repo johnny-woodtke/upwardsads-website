@@ -51,11 +51,11 @@ export default function App() {
         <div className="w-1/2 border-y border-primary/10 max-sm:w-full">
           <div className="flex h-full w-full justify-end">
             <div className="max-w-screen-sm flex-col p-8 text-end lg:p-16">
-              <h2 className="mb-8 text-end text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">
+              <h2 className="mb-8 text-start text-3xl font-bold tracking-tight sm:text-end sm:text-4xl lg:mb-12 xl:text-5xl">
                 About us
               </h2>
 
-              <p className="text-end text-gray-500 sm:text-lg">
+              <p className="text-justify text-gray-500 sm:text-lg">
                 Upwards Ads is a digital marketing agency that specializes in helping small businesses grow. We are
                 dedicated to helping you reach your business goals and increase your revenue. Our team of experts will
                 work with you to create a custom marketing strategy that will help you stand out from the competition.
