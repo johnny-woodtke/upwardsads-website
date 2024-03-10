@@ -1,16 +1,22 @@
+import { ButtonHTMLAttributes, forwardRef } from "react"
 import { Button, ButtonProps } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-type SubmitButtonProps = {
+type SubmitButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string
   size?: ButtonProps["size"]
   children: React.ReactNode
 }
 
-export function SubmitButton({ className, size, children }: SubmitButtonProps) {
-  return (
-    <Button type="submit" className={cn("w-full rounded-lg py-6", className)} size={size}>
-      {children}
-    </Button>
-  )
-}
+const SubmitButton = forwardRef<HTMLButtonElement, SubmitButtonProps>(
+  ({ className, size, children, ...props }, ref) => {
+    return (
+      <Button type="submit" ref={ref} className={cn("w-full rounded-lg py-6", className)} size={size} {...props}>
+        {children}
+      </Button>
+    )
+  }
+)
+SubmitButton.displayName = "SubmitButton"
+
+export { SubmitButton }

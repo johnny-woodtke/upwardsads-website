@@ -4,20 +4,21 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { isPossiblePhoneNumber } from "libphonenumber-js"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { PhoneInput, SubmitButton, TextInput } from "@/components/Form"
+import { SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { NAME_REGEX } from "@/lib/constants"
+import { Loader2 } from "lucide-react"
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "Please enter your first name").regex(NAME_REGEX, "Please enter a valid first name"),
   lastName: z.string().min(1, "Please enter your last name").regex(NAME_REGEX, "Please enter a valid last name"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().refine((value) => isPossiblePhoneNumber(value), {
+  phone: z.string().refine((value) => isPossiblePhoneNumber(value, "US"), {
     message: "Please enter a valid phone number",
   }),
-  date: z.string().refine((value) => new Date(value) > new Date(), {
-    message: "Please enter a date in the future",
-  }),
+  // date: z.string().refine((value) => new Date(value) > new Date(), {
+  //   message: "Please enter a date in the future",
+  // }),
 })
 
 type ContactFormValues = z.infer<typeof contactSchema>
@@ -29,14 +30,19 @@ export function ContactForm() {
       lastName: "",
       email: "",
       phone: "",
-      date: "",
     },
     resolver: zodResolver(contactSchema),
   })
-  const { handleSubmit, control } = form
+  const {
+    handleSubmit,
+    control,
+    formState: { isValid, isSubmitting },
+  } = form
 
-  const onSubmit = (data: ContactFormValues) => {
-    console.log("Form submitted", data)
+  const onSubmit = async (data: ContactFormValues) => {
+    console.log(data)
+    await new Promise((resolve) => setTimeout(resolve, 5000))
+    console.log("Submitted")
   }
 
   return (
@@ -75,9 +81,18 @@ export function ContactForm() {
             pattern={undefined}
           />
 
-          <PhoneInput control={control} name="phone" label="Phone Number" />
+          <TextInput
+            control={control}
+            name="phone"
+            label="Phone Number"
+            type="tel"
+            pattern={undefined}
+            placeholder="000 000 00000"
+          />
 
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton disabled={!isValid || isSubmitting}>
+            {isSubmitting ? <Loader2 className="animate-spin" /> : "Submit"}
+          </SubmitButton>
         </div>
       </form>
     </Form>

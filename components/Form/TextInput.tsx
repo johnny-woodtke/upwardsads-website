@@ -8,7 +8,7 @@ type TextInputProps<T extends FieldValues> = {
   label: string
   control: Control<T>
   name: Path<T>
-  type: "text" | "email"
+  type: "text" | "email" | "tel"
   placeholder: string | undefined
   pattern: RegExp | undefined
 }
