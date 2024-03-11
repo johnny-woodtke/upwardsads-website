@@ -9,21 +9,18 @@ import { SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { NAME_REGEX } from "@/lib/constants"
 
-const contactSchema = z.object({
+const enterDetailsSchema = z.object({
   firstName: z.string().min(1, "Please enter your first name").regex(NAME_REGEX, "Please enter a valid first name"),
   lastName: z.string().min(1, "Please enter your last name").regex(NAME_REGEX, "Please enter a valid last name"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().refine((value) => isPossiblePhoneNumber(value, "US"), {
     message: "Please enter a valid phone number",
   }),
-  // date: z.string().refine((value) => new Date(value) > new Date(), {
-  //   message: "Please enter a date in the future",
-  // }),
 })
 
-type ContactFormValues = z.infer<typeof contactSchema>
+type EnterDetailsValues = z.infer<typeof enterDetailsSchema>
 
-export function ContactForm() {
+export function EnterDetails({ onFinish }: { onFinish: () => void }) {
   const form = useForm({
     defaultValues: {
       firstName: "",
@@ -31,7 +28,7 @@ export function ContactForm() {
       email: "",
       phone: "",
     },
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(enterDetailsSchema),
   })
   const {
     handleSubmit,
@@ -39,10 +36,11 @@ export function ContactForm() {
     formState: { isValid, isSubmitting },
   } = form
 
-  const onSubmit = async (data: ContactFormValues) => {
+  const onSubmit = async (data: EnterDetailsValues) => {
     console.log(data)
     await new Promise((resolve) => setTimeout(resolve, 5000))
     console.log("Submitted")
+    onFinish()
   }
 
   return (

@@ -37,11 +37,11 @@ export function TextInput<T extends FieldValues>({
               )}
             >
               <div className="-mb-1 mt-1">
-                <FormLabel className={cn("text-sm text-primary/90")}>{label}</FormLabel>
+                <FormLabel className="text-primary/90 lg:text-lg">{label}</FormLabel>
               </div>
               <FormControl>
                 <Input
-                  className={cn("w-full border-none bg-transparent p-0")}
+                  className="w-full border-none bg-transparent p-0 lg:text-base"
                   type={type}
                   placeholder={placeholder}
                   variant="no-focus"
