@@ -2,12 +2,12 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { isPossiblePhoneNumber } from "libphonenumber-js"
+import { Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { NAME_REGEX } from "@/lib/constants"
-import { Loader2 } from "lucide-react"
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "Please enter your first name").regex(NAME_REGEX, "Please enter a valid first name"),

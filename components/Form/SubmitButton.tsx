@@ -1,10 +1,8 @@
-import { ButtonHTMLAttributes, forwardRef } from "react"
+import { forwardRef } from "react"
 import { Button, ButtonProps } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-type SubmitButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  className?: string
-  size?: ButtonProps["size"]
+type SubmitButtonProps = ButtonProps & {
   children: React.ReactNode
 }
 
