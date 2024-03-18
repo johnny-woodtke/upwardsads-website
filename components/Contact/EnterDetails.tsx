@@ -20,7 +20,7 @@ const enterDetailsSchema = z.object({
 
 type EnterDetailsValues = z.infer<typeof enterDetailsSchema>
 
-export function EnterDetails({ onFinish }: { onFinish: () => void }) {
+export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
   const form = useForm({
     defaultValues: {
       firstName: "",
@@ -49,44 +49,16 @@ export function EnterDetails({ onFinish }: { onFinish: () => void }) {
         <div className="space-y-2">
           <div className="flex w-full space-x-2">
             <div className="w-1/2">
-              <TextInput
-                control={control}
-                name="firstName"
-                label="First Name"
-                type="text"
-                placeholder="John"
-                pattern={undefined}
-              />
+              <TextInput control={control} name="firstName" label="First Name" type="text" placeholder="John" />
             </div>
             <div className="w-1/2">
-              <TextInput
-                control={control}
-                name="lastName"
-                label="Last Name"
-                type="text"
-                placeholder="Doe"
-                pattern={undefined}
-              />
+              <TextInput control={control} name="lastName" label="Last Name" type="text" placeholder="Doe" />
             </div>
           </div>
 
-          <TextInput
-            control={control}
-            name="email"
-            label="Email"
-            type="email"
-            placeholder="johndoe@gmail.com"
-            pattern={undefined}
-          />
+          <TextInput control={control} name="email" label="Email" type="email" placeholder="johndoe@gmail.com" />
 
-          <TextInput
-            control={control}
-            name="phone"
-            label="Phone Number"
-            type="tel"
-            pattern={undefined}
-            placeholder="000 000 00000"
-          />
+          <TextInput control={control} name="phone" label="Phone Number" type="tel" placeholder="000 000 0000" />
 
           <SubmitButton disabled={!isValid || isSubmitting}>
             {isSubmitting ? <Loader2 className="animate-spin" /> : "Submit"}

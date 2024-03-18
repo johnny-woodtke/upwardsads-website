@@ -1,26 +1,16 @@
 import { useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import { Input, InputProps } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 
 type TextInputProps<T extends FieldValues> = {
   label: string
   control: Control<T>
   name: Path<T>
-  type: "text" | "email" | "tel"
-  placeholder: string | undefined
-  pattern: RegExp | undefined
-}
+} & InputProps
 
-export function TextInput<T extends FieldValues>({
-  control,
-  name,
-  label,
-  type,
-  placeholder,
-  pattern,
-}: TextInputProps<T>) {
+export function TextInput<T extends FieldValues>({ control, name, label, ...props }: Readonly<TextInputProps<T>>) {
   const [isFocused, setIsFocused] = useState(false)
   return (
     <FormField
@@ -42,21 +32,17 @@ export function TextInput<T extends FieldValues>({
               <FormControl>
                 <Input
                   className="w-full border-none bg-transparent p-0 lg:text-base"
-                  type={type}
-                  placeholder={placeholder}
                   variant="no-focus"
+                  {...props}
                   {...field}
-                  onKeyDown={(e) => {
-                    if (pattern && !pattern.test(e.key)) {
-                      e.preventDefault()
-                    }
-                  }}
-                  onFocus={() => {
+                  onFocus={(e) => {
                     setIsFocused(true)
+                    props.onFocus?.(e)
                   }}
-                  onBlur={() => {
+                  onBlur={(e) => {
                     setIsFocused(false)
                     field.onBlur()
+                    props.onBlur?.(e)
                   }}
                 />
               </FormControl>
