@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
-import { NAME_REGEX, PHONE_REGEX } from "@/lib/constants"
+import { NAME_REGEX } from "@/lib/constants"
 
 const enterDetailsSchema = z.object({
   firstName: z.string().min(1, "Please enter your first name").regex(NAME_REGEX, "Please enter a valid first name"),
@@ -41,8 +41,6 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
 
   const onSubmit = async (data: Readonly<EnterDetailsValues>) => {
     console.log(data)
-    await new Promise((resolve) => setTimeout(resolve, 5000))
-    console.log("Submitted")
     onFinish()
   }
 
@@ -61,7 +59,6 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
                 inputMode={undefined}
                 placeholder="John"
                 pattern={NAME_REGEX}
-                customRef={undefined}
               />
             </div>
             <div className="w-1/2">
@@ -74,7 +71,6 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
                 inputMode={undefined}
                 placeholder="Doe"
                 pattern={NAME_REGEX}
-                customRef={undefined}
               />
             </div>
           </div>
@@ -88,7 +84,6 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
             inputMode="email"
             placeholder="johndoe@gmail.com"
             pattern={undefined}
-            customRef={undefined}
           />
 
           <PhoneNumberInput

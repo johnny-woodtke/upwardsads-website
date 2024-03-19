@@ -1,4 +1,4 @@
-import { Ref, useState } from "react"
+import { useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input, InputProps } from "@/components/ui/input"
@@ -9,7 +9,6 @@ type TextInputProps<T extends FieldValues> = {
   control: Control<T>
   name: Path<T>
   pattern: RegExp | undefined
-  customRef: Ref<HTMLInputElement> | undefined
   placeholder: InputProps["placeholder"]
   type: InputProps["type"]
   inputMode: InputProps["inputMode"]
@@ -21,7 +20,6 @@ export function TextInput<T extends FieldValues>({
   name,
   label,
   pattern,
-  customRef,
   ...props
 }: Readonly<TextInputProps<T>>) {
   const [isFocused, setIsFocused] = useState(false)
@@ -61,7 +59,6 @@ export function TextInput<T extends FieldValues>({
                     setIsFocused(false)
                     field.onBlur()
                   }}
-                  ref={customRef || field.ref}
                 />
               </FormControl>
             </div>

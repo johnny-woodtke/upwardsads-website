@@ -41,7 +41,11 @@ export function NavigationMenu() {
   )
 }
 
-function MenuLink({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
+function MenuLink({
+  href,
+  children,
+  className,
+}: Readonly<{ href: string; children: React.ReactNode; className?: string }>) {
   return (
     <Link
       href={href}

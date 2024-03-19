@@ -2,25 +2,29 @@
 
 import { ReactNode } from "react"
 
-import { Confirmation, EnterDetails, useContactFormContext } from "@/components/Contact"
+import { EnterDetails, useContactFormContext } from "@/components/Contact"
+import { useToast } from "@/components/ui/use-toast"
 
 export enum Step {
   EnterDetails = "EnterDetails",
-  Confirmation = "Confirmation",
 }
 
 export function MultiStepContactForm() {
-  const { currentStep, setCurrentStep } = useContactFormContext()
+  const { currentStep } = useContactFormContext()
+
+  const { toast } = useToast()
 
   const stepElements: Record<Step, ReactNode> = {
     [Step.EnterDetails]: (
       <EnterDetails
         onFinish={() => {
-          setCurrentStep(Step.Confirmation)
+          toast({
+            title: "Thank you for contacting us!",
+            description: "We will get back to you as soon as possible.",
+          })
         }}
       />
     ),
-    [Step.Confirmation]: <Confirmation />,
   }
 
   return stepElements[currentStep]
