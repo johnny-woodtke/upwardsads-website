@@ -1,10 +1,10 @@
 import "react-phone-number-input/style.css"
 import { forwardRef, useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
-import PhoneInput from "react-phone-number-input"
+import PhoneInput from "react-phone-number-input/input"
+import { containerClassName, inputClassName, labelClassName, labelContainerClassName } from "@/components/Form"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input, InputProps } from "@/components/ui/input"
-import { cn } from "@/lib/utils"
 
 type PhoneNumberInputProps<T extends FieldValues> = {
   label: string
@@ -31,14 +31,13 @@ export function PhoneNumberInput<T extends FieldValues>({
         return (
           <FormItem>
             <div
-              className={cn(
-                "rounded-xl border border-primary/40 px-3 py-1",
-                fieldState.error && "border-destructive",
-                isFocused && "border-primary"
-              )}
+              className={containerClassName({
+                isFocused,
+                error: !!fieldState.error,
+              })}
             >
-              <div className="-mb-1 mt-1">
-                <FormLabel className="text-primary/80 lg:text-base">{label}</FormLabel>
+              <div className={labelContainerClassName}>
+                <FormLabel className={labelClassName}>{label}</FormLabel>
               </div>
               <FormControl>
                 <PhoneInput
@@ -67,14 +66,7 @@ export function PhoneNumberInput<T extends FieldValues>({
   )
 }
 
-const PhoneInputComponent = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
-  return (
-    <Input
-      {...props}
-      className="w-full border-none bg-transparent p-0 text-base lg:text-lg"
-      variant="no-focus"
-      ref={ref}
-    />
-  )
+const PhoneInputComponent = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  return <Input {...props} className={inputClassName} variant="no-focus" ref={ref} />
 })
 PhoneInputComponent.displayName = "PhoneInputComponent"

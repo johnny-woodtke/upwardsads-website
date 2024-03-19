@@ -9,7 +9,13 @@ type SubmitButtonProps = ButtonProps & {
 const SubmitButton = forwardRef<HTMLButtonElement, SubmitButtonProps>(
   ({ className, size, children, ...props }, ref) => {
     return (
-      <Button type="submit" ref={ref} className={cn("w-full rounded-lg py-6", className)} size={size} {...props}>
+      <Button
+        type="submit"
+        ref={ref}
+        className={cn("w-full rounded-lg py-6 lg:text-base", className)}
+        size={size}
+        {...props}
+      >
         {children}
       </Button>
     )

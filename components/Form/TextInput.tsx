@@ -2,7 +2,7 @@ import { Ref, useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input, InputProps } from "@/components/ui/input"
-import { cn } from "@/lib/utils"
+import { containerClassName, inputClassName, labelClassName, labelContainerClassName } from "./utils"
 
 type TextInputProps<T extends FieldValues> = {
   label: string
@@ -33,18 +33,17 @@ export function TextInput<T extends FieldValues>({
         return (
           <FormItem>
             <div
-              className={cn(
-                "rounded-xl border border-primary/40 px-3 py-1",
-                fieldState.error && "border-destructive",
-                isFocused && "border-primary"
-              )}
+              className={containerClassName({
+                isFocused,
+                error: !!fieldState.error,
+              })}
             >
-              <div className="-mb-1 mt-1">
-                <FormLabel className="text-primary/80 lg:text-base">{label}</FormLabel>
+              <div className={labelContainerClassName}>
+                <FormLabel className={labelClassName}>{label}</FormLabel>
               </div>
               <FormControl>
                 <Input
-                  className="w-full border-none bg-transparent p-0 text-base lg:text-lg"
+                  className={inputClassName}
                   variant="no-focus"
                   {...props}
                   {...field}
