@@ -5,7 +5,7 @@ import { isPossiblePhoneNumber } from "libphonenumber-js"
 import { Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { SubmitButton, TextInput } from "@/components/Form"
+import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { NAME_REGEX, PHONE_REGEX } from "@/lib/constants"
 
@@ -83,7 +83,7 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
             disabled={isSubmitting}
             control={control}
             name="email"
-            label="Email"
+            label="Email Address"
             type="email"
             inputMode="email"
             placeholder="johndoe@gmail.com"
@@ -91,16 +91,14 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
             customRef={undefined}
           />
 
-          <TextInput
+          <PhoneNumberInput
             disabled={isSubmitting}
             control={control}
             name="phone"
             label="Phone Number"
+            placeholder="(000) 000-0000"
             type="tel"
             inputMode="tel"
-            placeholder="000 000 0000"
-            pattern={PHONE_REGEX}
-            customRef={undefined}
           />
 
           <SubmitButton disabled={!isValid || isSubmitting}>
