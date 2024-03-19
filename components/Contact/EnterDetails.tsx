@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
+import { contactPOST } from "@/lib/client"
 import { NAME_REGEX } from "@/lib/constants"
 
 const enterDetailsSchema = z.object({
@@ -40,7 +41,10 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
   } = form
 
   const onSubmit = async (data: Readonly<EnterDetailsValues>) => {
-    console.log(data)
+    await contactPOST({
+      method: "contact",
+      data,
+    })
     onFinish()
   }
 
