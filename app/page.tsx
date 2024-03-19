@@ -55,7 +55,7 @@ export default function App() {
                 About us
               </h2>
 
-              <p className="text-justify text-gray-500 sm:text-lg">
+              <p className="text-start text-gray-500 sm:text-justify sm:text-lg">
                 Upwards Ads is a digital marketing agency that specializes in helping small businesses grow. We are
                 dedicated to helping you reach your business goals and increase your revenue. Our team of experts will
                 work with you to create a custom marketing strategy that will help you stand out from the competition.
