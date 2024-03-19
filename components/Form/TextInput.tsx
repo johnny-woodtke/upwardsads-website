@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { Ref, useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input, InputProps } from "@/components/ui/input"
@@ -8,9 +8,22 @@ type TextInputProps<T extends FieldValues> = {
   label: string
   control: Control<T>
   name: Path<T>
-} & InputProps
+  pattern: RegExp | undefined
+  customRef: Ref<HTMLInputElement> | undefined
+  placeholder: InputProps["placeholder"]
+  type: InputProps["type"]
+  inputMode: InputProps["inputMode"]
+  disabled: InputProps["disabled"]
+}
 
-export function TextInput<T extends FieldValues>({ control, name, label, ...props }: Readonly<TextInputProps<T>>) {
+export function TextInput<T extends FieldValues>({
+  control,
+  name,
+  label,
+  pattern,
+  customRef,
+  ...props
+}: Readonly<TextInputProps<T>>) {
   const [isFocused, setIsFocused] = useState(false)
   return (
     <FormField
@@ -27,23 +40,29 @@ export function TextInput<T extends FieldValues>({ control, name, label, ...prop
               )}
             >
               <div className="-mb-1 mt-1">
-                <FormLabel className="text-primary/90 lg:text-lg">{label}</FormLabel>
+                <FormLabel className="text-primary/80 lg:text-base">{label}</FormLabel>
               </div>
               <FormControl>
                 <Input
-                  className="w-full border-none bg-transparent p-0 lg:text-base"
+                  className="w-full border-none bg-transparent p-0 text-base lg:text-lg"
                   variant="no-focus"
                   {...props}
                   {...field}
-                  onFocus={(e) => {
-                    setIsFocused(true)
-                    props.onFocus?.(e)
+                  onChange={(e) => {
+                    if (pattern && !pattern.test(e.target.value)) {
+                      e.preventDefault()
+                      return
+                    }
+                    field.onChange(e)
                   }}
-                  onBlur={(e) => {
+                  onFocus={() => {
+                    setIsFocused(true)
+                  }}
+                  onBlur={() => {
                     setIsFocused(false)
                     field.onBlur()
-                    props.onBlur?.(e)
                   }}
+                  ref={customRef || field.ref}
                 />
               </FormControl>
             </div>
