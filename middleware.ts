@@ -12,6 +12,19 @@ export function middleware(req: NextRequest) {
     }
     return NextResponse.next()
   } catch (e: any) {
+    const ruleErrors: Record<
+      Rule,
+      {
+        message: string
+        status: number
+      }
+    > = {
+      "valid-origin": {
+        message: "Request origin is not allowed.",
+        status: 403,
+      },
+    }
+
     const ruleError = ruleErrors[e.message as Rule]
     if (ruleError) {
       return NextResponse.json({ status: "error", message: ruleError.message }, { status: ruleError.status })
@@ -25,7 +38,7 @@ export const config = {
   matcher: ["/api/:path*"],
 }
 
-type Rule = "same-origin"
+type Rule = "valid-origin"
 
 const pathConfigs: {
   pathname: string
@@ -33,7 +46,7 @@ const pathConfigs: {
 }[] = [
   {
     pathname: "/api/health",
-    exemptions: ["same-origin"],
+    exemptions: ["valid-origin"],
   },
 ]
 
@@ -47,25 +60,15 @@ class RuleError extends Error {
   }
 }
 
-const ruleErrors: Record<
-  Rule,
-  {
-    message: string
-    status: number
-  }
-> = {
-  "same-origin": {
-    message: "Request origin is not allowed.",
-    status: 403,
-  },
-}
-
 const ruleHandlers: Record<Rule, (req: NextRequest) => void> = {
-  "same-origin": isSameOriginOrThrow,
+  "valid-origin": isValidOriginOrThrow,
 }
 
-function isSameOriginOrThrow(req: NextRequest) {
-  if (new URL(req.url).origin !== req.headers.get("origin")) {
-    throw new RuleError("same-origin")
+const ALLOWED_API_ORIGINS = process.env.ALLOWED_API_ORIGINS?.split(",") ?? []
+
+function isValidOriginOrThrow(req: NextRequest) {
+  const origin = req.headers.get("origin")
+  if (new URL(req.url).origin !== origin || !ALLOWED_API_ORIGINS.includes(origin)) {
+    throw new RuleError("valid-origin")
   }
 }
