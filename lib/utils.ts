@@ -9,8 +9,6 @@ export function cn(...inputs: ClassValue[]) {
 export function clientPOST(url: string, body: any) {
   return fetch(url, {
     method: "POST",
-    mode: "cors",
-    credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
     },
@@ -18,4 +16,4 @@ export function clientPOST(url: string, body: any) {
   })
 }
 
-export type SameOriginRequest<T> = Omit<NextRequest, "json"> & { json: () => Promise<T> }
+export type SameOriginRequest<T> = Readonly<Omit<NextRequest, "json"> & { json: () => Promise<T> }>
