@@ -34,8 +34,9 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // only match /api/* paths
-  matcher: ["/api/:path*"],
+  matcher: [
+    "/api/:path*", // Match all API routes
+  ],
 }
 
 type Rule = "valid-origin"

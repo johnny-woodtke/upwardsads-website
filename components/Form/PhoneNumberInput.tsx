@@ -1,3 +1,5 @@
+"use client"
+
 import "react-phone-number-input/style.css"
 import { forwardRef, useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
@@ -45,9 +47,6 @@ export function PhoneNumberInput<T extends FieldValues>({
                   {...field}
                   defaultCountry="US"
                   inputComponent={PhoneInputComponent}
-                  onChange={(value) => {
-                    field.onChange(value)
-                  }}
                   onFocus={() => {
                     setIsFocused(true)
                   }}
