@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx"
+import { NextRequest } from "next/server"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
@@ -17,4 +18,4 @@ export function clientPOST(url: string, body: any) {
   })
 }
 
-export type SameOriginRequest<T> = Omit<Request, "json"> & { json: () => Promise<T> }
+export type SameOriginRequest<T> = Omit<NextRequest, "json"> & { json: () => Promise<T> }
