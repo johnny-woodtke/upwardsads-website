@@ -10,18 +10,14 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // all paths will be handled by the middleware
-  matcher: undefined,
+  // only match /api/* paths
+  matcher: ["/api/:path*"],
 }
 
 function isValidOriginOrThrow(req: NextRequest) {
-  const { origin: targetOrigin, pathname: targetPathname } = new URL(req.url)
-
-  if (targetPathname.startsWith("/api")) {
-    const requestOrigin = req.headers.get("origin")
-
-    if (targetOrigin !== requestOrigin) {
-      throw new Error("Forbidden")
-    }
+  const { origin: targetOrigin } = new URL(req.url)
+  const requestOrigin = req.headers.get("origin")
+  if (targetOrigin !== requestOrigin) {
+    throw new Error("Forbidden")
   }
 }
