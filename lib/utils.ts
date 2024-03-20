@@ -17,3 +17,7 @@ export function clientPOST(url: string, body: any) {
 }
 
 export type SameOriginRequest<T> = Readonly<Omit<NextRequest, "json"> & { json: () => Promise<T> }>
+
+export type MethodHandlers<Methods extends { method: string; data: any }, R> = {
+  [K in Methods as K["method"]]: (data: K["data"]) => R
+}
