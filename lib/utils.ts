@@ -18,6 +18,11 @@ export function clientPOST(url: string, body: any) {
 
 export type SameOriginRequest<T> = Readonly<Omit<NextRequest, "json"> & { json: () => Promise<T> }>
 
-export type MethodHandlers<Methods extends { method: string; data: any }, R> = {
-  [K in Methods as K["method"]]: (data: K["data"]) => R
+type POSTProps = {
+  method: string
+  data: any
+}
+
+export type POSTHandlers<T extends POSTProps, ReturnType> = {
+  [K in T as K["method"]]: (data: K["data"]) => ReturnType
 }

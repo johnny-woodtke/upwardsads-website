@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
 import { ContactPOSTCalendarData, ContactPOSTContactData, ContactPOSTProps } from "@/lib/client"
-import { MethodHandlers, SameOriginRequest } from "@/lib/utils"
+import { POSTHandlers, SameOriginRequest } from "@/lib/utils"
 
-const methodHandlers: MethodHandlers<ContactPOSTProps, Promise<void>> = {
+const methodHandlers: POSTHandlers<ContactPOSTProps, Promise<void>> = {
   async contact(data: ContactPOSTContactData) {
     console.log("Contact form submitted:", data)
   },
