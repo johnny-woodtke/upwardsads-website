@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
+import { useToast } from "@/components/ui/use-toast"
+import { contactPOST } from "@/lib/client/contact"
 import { NAME_REGEX } from "@/lib/constants"
 
 const enterDetailsSchema = z.object({
@@ -39,8 +41,26 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
     formState: { isValid, isSubmitting },
   } = form
 
+  const { toast } = useToast()
+
   const onSubmit = async (data: Readonly<EnterDetailsValues>) => {
-    console.log(data)
+    const res = await contactPOST({
+      method: "contact",
+      data,
+    })
+
+    const toastProps: Parameters<typeof toast>[0] = {
+      title: "Thank you for contacting us",
+      description: "We will get back to you as soon as possible.",
+      variant: "default",
+    }
+    if (!res.ok) {
+      toastProps.title = "An error occurred"
+      toastProps.description = "Please try again later."
+      toastProps.variant = "destructive"
+    }
+    toast(toastProps)
+
     onFinish()
   }
 
