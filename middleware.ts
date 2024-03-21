@@ -65,11 +65,11 @@ const ruleHandlers: Record<Rule, (req: NextRequest) => void> = {
   "valid-origin": isValidOriginOrThrow,
 }
 
-const ALLOWED_API_ORIGINS = process.env.ALLOWED_API_ORIGINS?.split(",") ?? []
+const ALLOWED_API_ORIGINS = process.env.ALLOWED_API_ORIGINS?.split(",") || []
 
 function isValidOriginOrThrow(req: NextRequest) {
   const origin = req.headers.get("origin")
-  if (new URL(req.url).origin !== origin || !ALLOWED_API_ORIGINS.includes(origin)) {
+  if (new URL(req.url).origin !== origin && !ALLOWED_API_ORIGINS.includes(origin || "")) {
     throw new RuleError("valid-origin")
   }
 }

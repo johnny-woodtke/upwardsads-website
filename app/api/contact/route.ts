@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server"
-import { ContactPOSTCalendarProps, ContactPOSTContactProps, ContactPOSTProps } from "@/lib/client"
-import { ExtractPOSTHandlers, Request } from "@/lib/utils"
+import type {
+  ContactPOSTCalendarProps,
+  ContactPOSTContactProps,
+  ContactPOSTProps,
+  ContactPOSTResponseType,
+  ContactPOSTReturnType,
+} from "@/lib/client/contact"
+import { ExtractPOSTHandlers, Request } from "@/lib/server/utils"
 
-const POSTHandlers: ExtractPOSTHandlers<ContactPOSTProps, Promise<void>> = {
+const POSTHandlers: ExtractPOSTHandlers<ContactPOSTProps, Promise<ContactPOSTReturnType>> = {
   async contact(data: ContactPOSTContactProps["data"]) {
     console.log("Contact form submitted:", data)
   },
@@ -12,7 +18,8 @@ const POSTHandlers: ExtractPOSTHandlers<ContactPOSTProps, Promise<void>> = {
 }
 
 export async function POST(req: Request<ContactPOSTProps>) {
+  console.log("hello")
   const body = await req.json()
   await POSTHandlers[body.method](body.data as any)
-  return NextResponse.json({ status: "ok" })
+  return NextResponse.json<ContactPOSTResponseType>({ status: "ok" })
 }

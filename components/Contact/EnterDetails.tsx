@@ -8,7 +8,7 @@ import { z } from "zod"
 import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { useToast } from "@/components/ui/use-toast"
-import { contactPOST } from "@/lib/client"
+import { contactPOST } from "@/lib/client/contact"
 import { NAME_REGEX } from "@/lib/constants"
 
 const enterDetailsSchema = z.object({
