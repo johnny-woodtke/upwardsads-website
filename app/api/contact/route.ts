@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+
 import type {
   ContactPOSTCalendarProps,
   ContactPOSTContactProps,
@@ -18,7 +19,7 @@ const POSTHandlers: ExtractPOSTHandlers<ContactPOSTProps, Promise<ContactPOSTRet
 }
 
 export async function POST(req: Request<ContactPOSTProps>) {
-  console.log("hello")
+  console.log("hello", process.env.API_KEY)
   const body = await req.json()
   await POSTHandlers[body.method](body.data as any)
   return NextResponse.json<ContactPOSTResponseType>({ status: "ok" })

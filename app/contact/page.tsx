@@ -1,7 +1,4 @@
-import { metadata } from "@/app/page"
 import { ContactFormProvider, MultiStepContactForm } from "@/components/Contact"
-
-export { metadata }
 
 export default function Contact() {
   return (

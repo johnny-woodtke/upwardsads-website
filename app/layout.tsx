@@ -1,8 +1,9 @@
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import { NavigationMenu } from "@/components/NavigationMenu"
-import "@/styles/global.css"
 import { Toaster } from "@/components/ui/toaster"
+import "@/styles/global.css"
 
 export default function AppLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
