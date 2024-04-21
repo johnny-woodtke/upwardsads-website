@@ -14,6 +14,7 @@ export function enterDetailsSchema() {
       .refine((value) => isPossiblePhoneNumber(value, "US"), {
         message: "Please enter a valid phone number",
       }),
+    message: z.string(),
   })
 }
 

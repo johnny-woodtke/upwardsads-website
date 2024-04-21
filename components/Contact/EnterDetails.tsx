@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form"
 
 import { handleContactSubmission } from "@/app/contact/actions"
 import { enterDetailsSchema, EnterDetailsValues } from "@/components/Contact"
-import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
+import { PhoneNumberInput, SubmitButton, TextareaInput, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { useToast } from "@/components/ui/use-toast"
 import { NAME_REGEX } from "@/lib/utils"
@@ -22,6 +22,7 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
       lastName: "",
       email: "",
       phone: "",
+      message: "",
     },
     resolver: zodResolver(enterDetailsSchema()),
   })
@@ -101,6 +102,15 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
             placeholder="(000) 000-0000"
             type="tel"
             inputMode="tel"
+          />
+
+          <TextareaInput
+            disabled={isSubmitting}
+            name="message"
+            control={control}
+            label="Message (optional)"
+            placeholder="Your message here..."
+            inputMode="text"
           />
 
           <SubmitButton disabled={!isValid || isSubmitting}>
