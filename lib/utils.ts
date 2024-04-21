@@ -5,7 +5,4 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export type POSTProps = {
-  method: string
-  data: any
-}
+export const NAME_REGEX = /^[a-zA-Z]*$/

@@ -1,31 +1,9 @@
-import { Metadata } from "next"
 import Image from "next/image"
 
 import { ReviewCarousel } from "@/components/ReviewCarousel"
 import { Button } from "@/components/ui/button"
-import { DESCRIPTION, TITLE } from "@/lib/constants"
-import { LP_GRID_ITEMS } from "@/lib/data/lp-items"
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  icons: {
-    icon: "/assets/logo.png",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-  openGraph: {
-    url: "https://upwardsads-website.vercel.app/",
-    images: [
-      {
-        width: 1200,
-        height: 1200,
-        url: "https://upwardsads-website.vercel.app/assets/logo.png",
-      },
-    ],
-  },
-}
+import { DESCRIPTION, LP_GRID_ITEMS, TITLE } from "./data"
 
 export default function App() {
   return (

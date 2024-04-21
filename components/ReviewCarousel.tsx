@@ -2,8 +2,9 @@
 
 import Autoplay from "embla-carousel-autoplay"
 import { Star } from "lucide-react"
+
+import { REVIEWS } from "@/app/data"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { REVIEWS } from "@/lib/data/reviews"
 
 export function ReviewCarousel() {
   return (

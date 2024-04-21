@@ -1,31 +1,21 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { isPossiblePhoneNumber } from "libphonenumber-js"
 import { Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
+
+import { handleContactSubmission } from "@/app/contact/actions"
+import { enterDetailsSchema, EnterDetailsValues } from "@/components/Contact"
 import { PhoneNumberInput, SubmitButton, TextInput } from "@/components/Form"
 import { Form } from "@/components/ui/form"
 import { useToast } from "@/components/ui/use-toast"
-import { contactPOST } from "@/lib/client/contact"
-import { NAME_REGEX } from "@/lib/constants"
+import { NAME_REGEX } from "@/lib/utils"
 
-const enterDetailsSchema = z.object({
-  firstName: z.string().min(1, "Please enter your first name").regex(NAME_REGEX, "Please enter a valid first name"),
-  lastName: z.string().min(1, "Please enter your last name").regex(NAME_REGEX, "Please enter a valid last name"),
-  email: z.string().min(1, "Please enter your email").email("Please enter a valid email address"),
-  phone: z
-    .string()
-    .min(1, "Please enter your phone number")
-    .refine((value) => isPossiblePhoneNumber(value, "US"), {
-      message: "Please enter a valid phone number",
-    }),
-})
+type EnterDetailsProps = Readonly<{
+  onFinish: () => void
+}>
 
-type EnterDetailsValues = z.infer<typeof enterDetailsSchema>
-
-export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
+export function EnterDetails({ onFinish }: EnterDetailsProps) {
   const form = useForm({
     defaultValues: {
       firstName: "",
@@ -33,7 +23,7 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
       email: "",
       phone: "",
     },
-    resolver: zodResolver(enterDetailsSchema),
+    resolver: zodResolver(enterDetailsSchema()),
   })
   const {
     handleSubmit,
@@ -44,10 +34,7 @@ export function EnterDetails({ onFinish }: Readonly<{ onFinish: () => void }>) {
   const { toast } = useToast()
 
   const onSubmit = async (data: Readonly<EnterDetailsValues>) => {
-    const res = await contactPOST({
-      method: "contact",
-      data,
-    })
+    const res = await handleContactSubmission(data)
 
     const toastProps: Parameters<typeof toast>[0] = {
       title: "Thank you for contacting us",
