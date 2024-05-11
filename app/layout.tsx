@@ -23,8 +23,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/icon-og.png",
+      },
+    ],
   },
   openGraph: {
+    type: "website",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://upwardsads.com",
     images: [
       {
