@@ -11,19 +11,27 @@ import { DESCRIPTION, TITLE } from "./data"
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+
   icons: {
-    icon: "/assets/icon.png",
+    icon: {
+      url: "/assets/icon.png",
+      type: "image/png",
+    },
+    apple: {
+      url: "/assets/icon.png",
+      type: "image/png",
+    },
   },
   twitter: {
     card: "summary_large_image",
   },
   openGraph: {
-    url: "https://upwardsads.com",
+    url: "/",
     images: [
       {
-        width: 1200,
-        height: 1200,
-        url: "https://upwardsads.com/assets/icon.png",
+        width: 300,
+        height: 300,
+        url: "/assets/icon.png",
       },
     ],
   },

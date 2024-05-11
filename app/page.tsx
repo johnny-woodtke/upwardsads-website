@@ -48,7 +48,7 @@ export default function App() {
             <Image
               alt="About us"
               src="/assets/about.jpeg"
-              layout="fill"
+              fill
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
