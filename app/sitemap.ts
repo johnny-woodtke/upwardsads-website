@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://upwardsads.com/assets/icon.png",
+      url: "https://upwardsads.com/icon.png",
       lastModified: new Date(),
       priority: 0.5,
     },
