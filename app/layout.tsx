@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://upwardsads.com",
     images: [
       {
-        url: "/icon-sq-bg.png",
+        url: "/icon-og.png",
       },
     ],
   },
