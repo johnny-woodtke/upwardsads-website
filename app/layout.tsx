@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       {
         width: 1200,
         height: 1200,
-        url: "https://upwardsadsads.com/assets/icon.png",
+        url: "https://upwardsads.com/assets/icon.png",
       },
     ],
   },
