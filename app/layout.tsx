@@ -11,7 +11,6 @@ import { DESCRIPTION, TITLE } from "./data"
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-
   icons: {
     icon: {
       url: "/icon.png",
