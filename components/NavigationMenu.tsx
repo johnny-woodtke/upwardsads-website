@@ -15,7 +15,7 @@ export function NavigationMenu() {
       >
         <Link href="/" className="absolute left-3 top-0 aspect-[1] h-full invert">
           <Image
-            src="/assets/logo.png"
+            src="/assets/icon.png"
             alt="Logo"
             fill
             style={{

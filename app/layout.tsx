@@ -12,18 +12,18 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   icons: {
-    icon: "/assets/logo.png",
+    icon: "/assets/icon.png",
   },
   twitter: {
     card: "summary_large_image",
   },
   openGraph: {
-    url: "https://upwardsads-website.vercel.app/",
+    url: "https://upwardsads.com",
     images: [
       {
         width: 1200,
         height: 1200,
-        url: "https://upwardsads-website.vercel.app/assets/logo.png",
+        url: "https://upwardsadsads.com/assets/icon.png",
       },
     ],
   },
