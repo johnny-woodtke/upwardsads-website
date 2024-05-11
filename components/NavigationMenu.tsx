@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -15,7 +16,7 @@ export function NavigationMenu() {
       >
         <Link href="/" className="absolute left-3 top-0 aspect-[1] h-full invert">
           <Image
-            src="/assets/icon.png"
+            src="/icon-no-background.png"
             alt="Logo"
             fill
             style={{

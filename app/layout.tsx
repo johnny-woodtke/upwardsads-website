@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 
   icons: {
     icon: {
-      url: "/assets/icon.png",
+      url: "/icon.png",
       type: "image/png",
     },
     apple: {
-      url: "/assets/icon.png",
+      url: "/icon.png",
       type: "image/png",
     },
   },
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     url: "https://upwardsads.com",
     images: [
       {
-        width: 300,
-        height: 300,
-        url: "/assets/icon.png",
+        width: 384,
+        height: 3,
+        url: "/icon.png",
       },
     ],
   },
