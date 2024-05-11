@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       {
         width: 384,
         height: 3,
-        url: "/icon.png",
+        url: "/icon-sq-background.png",
       },
     ],
   },
