@@ -5,11 +5,15 @@ import { Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 
 import { handleContactSubmission } from "@/app/contact/actions"
-import { enterDetailsSchema, EnterDetailsValues } from "@/components/Contact"
-import { PhoneNumberInput, SubmitButton, TextareaInput, TextInput } from "@/components/Form"
+import { PhoneNumberInput } from "@/components/Form/PhoneNumberInput"
+import { SubmitButton } from "@/components/Form/SubmitButton"
+import { TextareaInput } from "@/components/Form/TextAreaInput"
+import { TextInput } from "@/components/Form/TextInput"
 import { Form } from "@/components/ui/form"
 import { useToast } from "@/components/ui/use-toast"
 import { NAME_REGEX } from "@/lib/utils"
+
+import { enterDetailsSchema, EnterDetailsValues } from "./utils"
 
 type EnterDetailsProps = Readonly<{
   onFinish: () => void

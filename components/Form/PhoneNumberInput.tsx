@@ -1,12 +1,14 @@
 "use client"
 
-import "react-phone-number-input/style.css"
 import { forwardRef, useState } from "react"
 import { Control, FieldValues, Path } from "react-hook-form"
 import PhoneInput from "react-phone-number-input/input"
-import { containerClassName, inputClassName, labelClassName, labelContainerClassName } from "@/components/Form"
+import "react-phone-number-input/style.css"
+
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input, InputProps } from "@/components/ui/input"
+
+import { containerClassName, inputClassName, labelClassName, labelContainerClassName } from "./utils"
 
 type PhoneNumberInputProps<T extends FieldValues> = {
   label: string

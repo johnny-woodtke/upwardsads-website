@@ -2,7 +2,8 @@
 
 import { ReactNode } from "react"
 
-import { EnterDetails, useContactFormContext } from "@/components/Contact"
+import { useContactFormContext } from "./ContactFormProvider"
+import { EnterDetails } from "./EnterDetails"
 
 export enum Step {
   EnterDetails = "EnterDetails",

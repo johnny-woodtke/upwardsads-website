@@ -2,8 +2,8 @@
 
 import showdown from "showdown"
 
-import { EnterDetailsValues } from "@/components/Contact"
-import { ADMIN_EMAILS, sendEmail } from "@/lib/services/mailjet"
+import { EnterDetailsValues } from "@/components/Contact/utils"
+import { ADMIN_EMAILS, sendEmail } from "@/services/mailjet"
 
 export async function handleContactSubmission(data: Readonly<EnterDetailsValues>) {
   try {

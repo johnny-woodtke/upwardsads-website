@@ -1,4 +1,2 @@
-export * from "./ContactFormProvider"
-export * from "./MultiStepContactForm"
-export * from "./EnterDetails"
-export * from "./utils"
+export { ContactFormProvider } from "./ContactFormProvider"
+export { MultiStepContactForm } from "./MultiStepContactForm"

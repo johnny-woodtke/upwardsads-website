@@ -2,7 +2,7 @@
 
 import { createContext, ReactNode, useContext, useState } from "react"
 
-import { Step } from "@/components/Contact"
+import { Step } from "./MultiStepContactForm"
 
 interface IContactFormContext {
   currentStep: Step
