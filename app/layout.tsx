@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   openGraph: {
-    url: "/",
+    url: "https://upwardsads.com",
     images: [
       {
         width: 300,
