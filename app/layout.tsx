@@ -20,9 +20,10 @@ export const metadata: Metadata = {
       url: "/icon.png",
       type: "image/png",
     },
-  },
-  twitter: {
-    card: "summary_large_image",
+    shortcut: {
+      url: "/icon.png",
+      type: "image/png",
+    },
   },
   openGraph: {
     type: "website",
