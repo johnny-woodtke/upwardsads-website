@@ -41,8 +41,8 @@ export function TeamLink() {
       >
         <Avatar src="/assets/craig-swanson.png" />
         <div className="flex flex-col justify-start ml-4 max-sm:ml-3 text-left h-20 w-32">
-          <p className="text-primary max-sm:tracking-tight">Craig Swanson</p>
-          <p className="text-primary max-sm:tracking-tight">CEO</p>
+          <p className="text-gray-300">Craig Swanson</p>
+          <p className="text-gray-300 tracking-tight">CEO</p>
           <MeetTheTeam
             {...{
               isHidden,
@@ -66,11 +66,11 @@ function MeetTheTeam({ isHidden, isHovered, isClicked }: MeetTheTeamProps) {
   return (
     <div
       className={cn(
-        "flex items-center text-primary mt-1 text-sm max-sm:tracking-tight",
+        "flex items-center text-primary mt-1 text-sm",
         "duration-150",
-        isHovered && "sm:animate-in sm:slide-in-from-left",
-        !isHovered && cn("sm:animate-out", isClicked ? "sm:slide-out-to-right" : "sm:slide-out-to-left"),
-        isHidden && "sm:hidden"
+        isHovered && "md:animate-in md:slide-in-from-left-6",
+        !isHovered && cn("md:animate-out", isClicked ? "md:slide-out-to-right-24" : "md:slide-out-to-left-6"),
+        isHidden && "md:hidden"
       )}
     >
       <span>Meet the team</span>
