@@ -30,8 +30,6 @@ export const metadata: Metadata = {
     url: "https://upwardsads.com",
     images: [
       {
-        width: 1200,
-        height: 630,
         url: "/icon-og.png",
         type: "image/png",
       },
