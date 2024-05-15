@@ -1,11 +1,16 @@
 import { Metadata } from "next"
 import Image from "next/image"
 
+import { TITLE } from "@/app/data"
+import { metadata as defaultMetadata } from "@/app/layout"
+
 import { DESCRIPTION, TeamMember, teamMembers } from "./data"
 
 export const metadata: Metadata = {
+  title: TITLE + " | The Team",
   description: DESCRIPTION,
   openGraph: {
+    ...defaultMetadata.openGraph,
     url: "https://upwardsads.com/team",
   },
 }
