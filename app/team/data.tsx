@@ -1,3 +1,5 @@
+export const DESCRIPTION = "Meet the team behind Upwards Ads."
+
 export type TeamMember = {
   name: string
   role: string
