@@ -41,7 +41,7 @@ export default function App() {
               competition.&quot;
             </p>
 
-            <div className="flex h-full items-end justify-end md:mt-24 mt-12">
+            <div className="mt-12 flex items-end justify-end md:mt-24">
               <TeamLink />
             </div>
           </div>
