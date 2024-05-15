@@ -5,6 +5,9 @@ import { DESCRIPTION, TeamMember, teamMembers } from "./data"
 
 export const metadata: Metadata = {
   description: DESCRIPTION,
+  openGraph: {
+    url: "https://upwardsads.com/team",
+  },
 }
 
 export default function Team() {
@@ -15,7 +18,9 @@ export default function Team() {
           <h2 className="mb-8 w-full text-start text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">
             The Team
           </h2>
-          <p className="mb-8 w-full text-start tracking-tight sm:text-lg lg:mb-12 xl:text-xl">{DESCRIPTION}</p>
+          <p className="mb-8 w-full text-start tracking-tight text-gray-500 sm:text-lg lg:mb-12 xl:text-xl">
+            {DESCRIPTION}
+          </p>
           <div className="flex w-full gap-12 max-lg:flex-col">
             {teamMembers.map((teamMember) => (
               <TeamMemberCard key={teamMember.name} {...teamMember} />

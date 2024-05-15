@@ -4,6 +4,9 @@ import { ContactFormProvider, MultiStepContactForm } from "@/components/Contact"
 
 export const metadata: Metadata = {
   description: "Contact us to set up a free consultation.",
+  openGraph: {
+    url: "https://upwardsads.com/contact",
+  },
 }
 
 export default function Contact() {
@@ -14,7 +17,7 @@ export default function Contact() {
           <h2 className="mb-8 w-full text-start text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">
             Contact us
           </h2>
-          <p className="mb-8 w-full text-start tracking-tight sm:text-lg lg:mb-12 xl:text-xl">
+          <p className="mb-8 w-full text-start tracking-tight text-gray-500 sm:text-lg lg:mb-12 xl:text-xl">
             Please fill out the form below to set up a free consultation.
           </p>
           <div className="w-full">
