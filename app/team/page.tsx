@@ -16,7 +16,7 @@ export default function Team() {
             The Team
           </h2>
           <p className="mb-8 w-full text-start tracking-tight sm:text-lg lg:mb-12 xl:text-xl">{DESCRIPTION}</p>
-          <div className="flex w-full gap-12">
+          <div className="flex w-full gap-12 max-lg:flex-col">
             {teamMembers.map((teamMember) => (
               <TeamMemberCard key={teamMember.name} {...teamMember} />
             ))}
@@ -31,9 +31,9 @@ type TeamMemberCardProps = Readonly<TeamMember>
 
 function TeamMemberCard({ name, role, image, bio }: TeamMemberCardProps) {
   return (
-    <div className="flex w-full flex-col items-center gap-4 rounded-2xl border p-4">
-      <div className="relative aspect-[1] w-[80%]">
-        <Image src={image} alt={name} fill className="rounded-full" />
+    <div className="flex w-full items-center gap-8 rounded-2xl border border-primary/30 p-4 lg:flex-col">
+      <div className="relative aspect-[1] max-lg:w-[40%] lg:w-[80%]">
+        <Image src={image} alt={name} fill className="rounded-full  border-[1px] border-primary/10 p-1" />
       </div>
       <div className="w-full">
         <h3 className="text-xl font-bold">{name}</h3>
