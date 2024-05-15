@@ -1,37 +1,11 @@
 import { Metadata } from "next"
 import Image from "next/image"
 
+import { TeamMember, teamMembers } from "./data"
+
 export const metadata: Metadata = {
   description: "Meet the team behind Upwards Ads.",
 }
-
-type TeamMember = {
-  name: string
-  role: string
-  image: string
-  bio: string
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    name: "Craig Swanson",
-    role: "CEO",
-    image: "/assets/craig-swanson.png",
-    bio: "Craig is the CEO of Upwards Ads. He has over 10 years of experience in digital marketing and has helped hundreds of small businesses grow.",
-  },
-  {
-    name: "Johnny Woodtke",
-    role: "CTO",
-    image: "/assets/johnny-woodtke.jpeg",
-    bio: "Johnny is the CTO of Upwards Ads. He is an expert in web development and has a passion for creating beautiful and functional websites.",
-  },
-  {
-    name: "Sam Polizzi",
-    role: "COO",
-    image: "/assets/sam-polizzi.jpeg",
-    bio: "Sam is the COO of Upwards Ads. She has a background in business development and is dedicated to helping small businesses succeed.",
-  },
-]
 
 export default function Team() {
   return (
