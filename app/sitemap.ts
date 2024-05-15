@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://upwardsads.com/team",
+      priority: 0.8,
+    },
+    {
       url: "https://upwardsads.com/icon.png",
       priority: 0.5,
     },

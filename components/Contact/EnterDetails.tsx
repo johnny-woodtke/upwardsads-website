@@ -66,7 +66,7 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
                 disabled={isSubmitting}
                 control={control}
                 name="firstName"
-                label="First Name"
+                label="First name"
                 type="text"
                 inputMode={undefined}
                 placeholder="John"
@@ -78,7 +78,7 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
                 disabled={isSubmitting}
                 control={control}
                 name="lastName"
-                label="Last Name"
+                label="Last name"
                 type="text"
                 inputMode={undefined}
                 placeholder="Doe"
@@ -91,7 +91,7 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
             disabled={isSubmitting}
             control={control}
             name="email"
-            label="Email Address"
+            label="Email address"
             type="email"
             inputMode="email"
             placeholder="johndoe@gmail.com"
@@ -102,7 +102,7 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
             disabled={isSubmitting}
             control={control}
             name="phone"
-            label="Phone Number"
+            label="Phone number"
             placeholder="(000) 000-0000"
             type="tel"
             inputMode="tel"
