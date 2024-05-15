@@ -31,7 +31,7 @@ export function TeamLink() {
   }, [isHovered, isClicked])
 
   return (
-    <div className="flex w-full h-full items-start justify-end">
+    <div className="flex h-full w-full items-start justify-end">
       <Link
         className={cn("flex")}
         href="/team"
@@ -40,9 +40,9 @@ export function TeamLink() {
         onClick={() => setIsClicked(true)}
       >
         <Avatar src="/assets/craig-swanson.png" />
-        <div className="flex flex-col justify-start ml-4 max-sm:ml-3 text-left h-20 w-32">
-          <p className="text-gray-300">Craig Swanson</p>
-          <p className="text-gray-300 tracking-tight">CEO</p>
+        <div className="ml-4 flex h-20 w-32 flex-col justify-start text-left max-sm:ml-3 md:w-36">
+          <p className="text-gray-300 md:text-lg">Craig Swanson</p>
+          <p className="tracking-tight text-gray-300 text-sm md:text-base">CEO</p>
           <MeetTheTeam
             {...{
               isHidden,
@@ -66,7 +66,7 @@ function MeetTheTeam({ isHidden, isHovered, isClicked }: MeetTheTeamProps) {
   return (
     <div
       className={cn(
-        "flex items-center text-primary mt-1 text-sm",
+        "flex items-center text-primary mt-1 text-sm md:text-base",
         "duration-150",
         isHovered && "md:animate-in md:slide-in-from-left-6",
         !isHovered && cn("md:animate-out", isClicked ? "md:slide-out-to-right-24" : "md:slide-out-to-left-6"),
@@ -75,7 +75,7 @@ function MeetTheTeam({ isHidden, isHovered, isClicked }: MeetTheTeamProps) {
     >
       <span>Meet the team</span>
       <svg
-        className="ml-2 max-sm:ml-1 h-4 w-4"
+        className="ml-2 h-4 w-4 max-sm:ml-1"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"

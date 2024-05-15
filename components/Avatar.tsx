@@ -9,10 +9,10 @@ type AvatarProps = Readonly<{
   className?: string
 }>
 
-const avatarVariants = cva("relative", {
+const avatarVariants = cva("relative aspect-[1]", {
   variants: {
     size: {
-      sm: "h-16 w-16 md:w-18 md:h-18",
+      sm: "h-[70px] md:h-20",
     },
   },
   defaultVariants: {
