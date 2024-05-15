@@ -42,7 +42,7 @@ type TeamMemberCardProps = Readonly<TeamMember>
 function TeamMemberCard({ name, role, image, bio }: TeamMemberCardProps) {
   return (
     <div className="flex w-full items-center gap-8 rounded-2xl border border-primary/30 p-4 lg:flex-col">
-      <div className="relative aspect-[1] max-lg:w-[60%] lg:w-[80%]">
+      <div className="relative aspect-[1] w-[80%] max-lg:w-[35%] max-md:w-[50%]">
         <Image src={image} alt={name} fill className="rounded-full border-[1px] border-primary/10 p-1" />
       </div>
       <div className="w-full">
