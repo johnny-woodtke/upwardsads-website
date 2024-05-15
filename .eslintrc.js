@@ -26,7 +26,6 @@ module.exports = {
         ignoreDeclarationSort: true,
       },
     ],
-    "tailwindcss/classnames-order": "off",
     "import/order": [
       1,
       {
