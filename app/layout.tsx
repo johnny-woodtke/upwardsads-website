@@ -13,15 +13,15 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   icons: {
     icon: {
-      url: "/icon.png",
+      url: "https://upwardsads.com/icon.png",
       type: "image/png",
     },
     apple: {
-      url: "/icon.png",
+      url: "https://upwardsads.com/icon.png",
       type: "image/png",
     },
     shortcut: {
-      url: "/icon.png",
+      url: "https://upwardsads.com/icon.png",
       type: "image/png",
     },
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://upwardsads.com",
     images: [
       {
-        url: "/icon-og.png",
+        url: "https://upwardsads.com/icon-og.png",
         type: "image/png",
       },
     ],
