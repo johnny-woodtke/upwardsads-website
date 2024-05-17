@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Metadata } from "next"
 
+import { GoogleAnalytics } from "@/components/GoogleAnalytics"
 import { NavigationMenu } from "@/components/NavigationMenu"
 import { Toaster } from "@/components/ui/toaster"
 import "@/styles/global.css"
@@ -40,6 +41,7 @@ export const metadata: Metadata = {
 export default function AppLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className="min-h-screen bg-black/95 bg-gradient-to-tr from-background">
         <Toaster />
         <NavigationMenu />
