@@ -48,7 +48,7 @@ export default function App() {
         </div>
 
         <div className="relative w-1/2 overflow-hidden max-sm:hidden">
-          <div className="absolute -top-24 h-[650px] w-full xl:-top-32 xl:h-[900px]">
+          <div className="absolute -top-20 h-[650px] w-full xl:-top-32 xl:h-[900px]">
             <ParallaxImage alt="About us" src="/assets/about.jpeg" />
           </div>
         </div>
