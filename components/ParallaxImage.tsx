@@ -10,7 +10,7 @@ type ParallaxImageProps = Readonly<{
   src: string
 }>
 
-export function ParallaxImage({ multiplier = 0.25, alt, src }: ParallaxImageProps) {
+export function ParallaxImage({ multiplier = 0.3, alt, src }: ParallaxImageProps) {
   const offsetY = useParallax(multiplier)
   return (
     <div className="relative h-full w-full" style={{ transform: `translateY(${offsetY}px)` }}>

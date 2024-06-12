@@ -65,6 +65,7 @@ export const LP_GRID_ITEMS: LpGridItem[] = [
 ]
 
 type Review = {
+  imagePath: string
   name: string
   company: string
   url: string
@@ -74,49 +75,57 @@ type Review = {
 
 export const REVIEWS: Review[] = [
   {
+    imagePath: "/assets/review1.jpg",
+    name: "Jake Jensen",
+    company: "Quick Clean Windows",
+    url: "https://www.quickcleanwindows.com/",
+    review:
+      "Craig Swanson helped me turn my business around with Facebook Ads. I went from a few calls a week to about 5-6 calls per day once he started running them for me. I highly recommend Craig and Upwards Ads.",
+    stars: 5,
+  },
+  {
+    imagePath: "/assets/review2.jpg",
+    name: "Mike Anghel",
+    company: "TagSonar",
+    url: "https://www.tagsonar.com/",
+    review:
+      "Upwards Ads is our go-to partner for paid media ads. We refer Craig Swanson exclusively to our home service provider clients to drive online leads. He handles everything gets our clients' phones ringing!",
+    stars: 5,
+  },
+  {
+    imagePath: "/assets/review3.jpg",
+    name: "Justin Bergendahl",
+    company: "Kellogg Plumbing",
+    url: "https://www.kelloggplumbingllc.com/",
+    review:
+      "I highly recommend Upwards Ads. The Upwards Ads team's work ethic, honesty, and integrity has shown me time and time again that my business is in the right hands.",
+    stars: 5,
+  },
+  {
+    imagePath: "/assets/review4.jpg",
     name: "Brent Hofen",
     company: "Hofen Lawn Care",
     url: "https://hofenlawncare.com",
     review:
-      "Upwards Ads has a clear edge on how to bring in high quality leads using digital ads. I love their heart to serve local businesses.",
+      "Upwards Ads has been a great partner for us. They have helped us grow our business opportunities by well over 100% and have been very responsive to our needs. I highly recommend them to anyone looking to grow their business.",
     stars: 5,
   },
   {
+    imagePath: "/assets/review5.jpg",
     name: "Shawn McLendon",
     company: "McLendon Roofing & Remodeling",
     url: "https://mclendonroofing.com",
     review:
-      "Upwards Ads has a great eye for the creative product and is dedicated to getting their clients to the next level.",
+      "The Upwards Ads team is amazing! They are very professional and knowledgeable. I never imagined that my business could grow so quickly. I highly recommend them to anyone looking to get their business to the next level.",
     stars: 5,
   },
   {
+    imagePath: "/assets/review6.jpg",
     name: "Daniel Sparks",
     company: "Sparks and Sons Handyman Services",
     url: "https://sparksandsons.com",
     review:
-      "Upwards Ads provides the determination and know-how to let your community know what you have to offer with the utmost integrity and dedication.",
-    stars: 5,
-  },
-  {
-    name: "Mark McGoldrick",
-    company: "McGoldrick Plumbing",
-    url: "https://mcgoldrickplumbing.com",
-    review: "Upwards Ads has a great eye for the creative product and is dedicated to a high level of service.",
-    stars: 5,
-  },
-  {
-    name: "John Doe",
-    company: "Doe's Construction",
-    url: "https://doesconstruction.com",
-    review: "Upwards Ads has unmatched expertise in the digital marketing space. They are a pleasure to work with.",
-    stars: 5,
-  },
-  {
-    name: "Jane Doe",
-    company: "Doe's Construction",
-    url: "https://doesconstruction.com",
-    review:
-      "For 6 months now, Upwards Ads has been a great partner in our digital marketing efforts. They have never let us down.",
+      "Upwards Ads has been a game changer for my business. Craig Swanson showed me how valuable Facebook Ads and online marketing can be for my business. I highly recommend them to anyone who may be skeptical or unsure about online marketing.",
     stars: 5,
   },
 ]
