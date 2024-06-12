@@ -4,6 +4,7 @@ import { ParallaxImage } from "@/components/ParallaxImage"
 import { ReviewCarousel } from "@/components/ReviewCarousel"
 import { TeamLink } from "@/components/TeamLink"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 import { DESCRIPTION, LP_GRID_ITEMS, TITLE } from "./data"
 
@@ -34,6 +35,7 @@ export default function App() {
             <h2 className="mb-8 text-start text-3xl font-bold tracking-tight sm:text-end sm:text-4xl lg:mb-12 xl:text-5xl">
               About us
             </h2>
+
             <p className="text-start text-gray-500 sm:text-justify sm:text-lg">
               &quot;Upwards Ads is a digital marketing agency that specializes in helping small businesses grow. We are
               dedicated to helping you reach your business goals and increase your revenue. Our team of experts will
@@ -54,7 +56,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="relative w-full border-b border-primary/10 sm:h-[500px] xl:h-[700px]">
+      <section className="relative w-full border-b border-primary/10 xl:h-[700px]">
         <div className="absolute top-[-100px] h-0 w-0" id="testimonials" />
 
         <div className="mx-auto h-full w-full max-w-screen-xl p-8 lg:p-16">
@@ -75,9 +77,12 @@ export default function App() {
         <div className="mx-auto w-full max-w-screen-xl p-8 lg:p-16">
           <div className="flex h-full w-full flex-col items-center justify-center">
             <h2 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">What we offer</h2>
-            <div className="justify-center space-y-8 md:grid md:auto-cols-auto md:grid-flow-col md:grid-rows-4 md:gap-12 md:space-y-2 lg:grid-rows-2">
-              {LP_GRID_ITEMS.map((singleItem) => (
-                <div key={singleItem.title} className="flex flex-col items-center justify-between text-center">
+            <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-2 lg:grid-cols-4">
+              {LP_GRID_ITEMS.map((singleItem, i) => (
+                <div
+                  key={singleItem.title}
+                  className={cn("flex flex-col items-center justify-between text-center", i === 0 && "pt-2")}
+                >
                   <div className="bg-primary-100 mb-4 flex h-10 w-10 items-center justify-center rounded-full p-1.5 text-blue-700 lg:h-12 lg:w-12">
                     {singleItem.icon}
                   </div>

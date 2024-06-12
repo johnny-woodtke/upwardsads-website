@@ -2,6 +2,7 @@
 
 import Autoplay from "embla-carousel-autoplay"
 import { Star } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 import { REVIEWS } from "@/app/data"
@@ -21,7 +22,7 @@ export function ReviewCarousel() {
       className="w-full max-w-[90%]"
     >
       <CarouselContent>
-        {REVIEWS.map(({ name, company, review: content, stars, url }, i) => (
+        {REVIEWS.map(({ name, company, review: content, stars, url, imagePath }, i) => (
           <CarouselItem key={i} className="w-0 sm:basis-1/2 lg:basis-1/3">
             <div className="mx-2 flex flex-col items-center justify-center text-center">
               <div className="mb-4 flex h-10 w-full items-center justify-center rounded-full p-1.5 text-blue-700">
@@ -30,12 +31,19 @@ export function ReviewCarousel() {
                 ))}
               </div>
 
-              <h3 className="mb-1 text-xl font-bold text-white">{name}</h3>
-              <Link href={url}>
-                <h4 className="mb-2 text-gray-300 hover:underline">{company}</h4>
-              </Link>
+              <div className="flex w-full items-center justify-between px-8">
+                <div className="relative aspect-square w-16">
+                  <Image src={imagePath} alt={name + " headshot"} fill className="rounded-full object-cover" />
+                </div>
+                <div className="ml-4 flex flex-col text-end">
+                  <h3 className="mb-1 text-xl font-bold text-white">{name}</h3>
+                  <Link href={url}>
+                    <h4 className="mb-2 text-gray-300 hover:underline">{company}</h4>
+                  </Link>
+                </div>
+              </div>
 
-              <p className="mb-2 text-gray-500">{content}</p>
+              <p className="mb-2 mt-3 text-gray-500">{content}</p>
             </div>
           </CarouselItem>
         ))}

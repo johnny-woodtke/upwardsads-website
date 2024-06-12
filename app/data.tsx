@@ -75,7 +75,7 @@ type Review = {
 
 export const REVIEWS: Review[] = [
   {
-    imagePath: "/assets/review1.jpg",
+    imagePath: "/assets/reviews/quick-clean-windows.webp",
     name: "Jake Jensen",
     company: "Quick Clean Windows",
     url: "https://www.quickcleanwindows.com/",
@@ -84,7 +84,7 @@ export const REVIEWS: Review[] = [
     stars: 5,
   },
   {
-    imagePath: "/assets/review2.jpg",
+    imagePath: "/assets/reviews/tagsonar.webp",
     name: "Mike Anghel",
     company: "TagSonar",
     url: "https://www.tagsonar.com/",
@@ -93,7 +93,7 @@ export const REVIEWS: Review[] = [
     stars: 5,
   },
   {
-    imagePath: "/assets/review3.jpg",
+    imagePath: "/assets/reviews/kellogg-plumbing.webp",
     name: "Justin Bergendahl",
     company: "Kellogg Plumbing",
     url: "https://www.kelloggplumbingllc.com/",
@@ -102,7 +102,7 @@ export const REVIEWS: Review[] = [
     stars: 5,
   },
   {
-    imagePath: "/assets/review4.jpg",
+    imagePath: "/assets/reviews/hofen-lawn-care.jpg",
     name: "Brent Hofen",
     company: "Hofen Lawn Care",
     url: "https://hofenlawncare.com",
@@ -111,18 +111,18 @@ export const REVIEWS: Review[] = [
     stars: 5,
   },
   {
-    imagePath: "/assets/review5.jpg",
+    imagePath: "/assets/reviews/mclendon-roofing.jpg",
     name: "Shawn McLendon",
-    company: "McLendon Roofing & Remodeling",
+    company: "McLendon Roofing",
     url: "https://mclendonroofing.com",
     review:
       "The Upwards Ads team is amazing! They are very professional and knowledgeable. I never imagined that my business could grow so quickly. I highly recommend them to anyone looking to get their business to the next level.",
     stars: 5,
   },
   {
-    imagePath: "/assets/review6.jpg",
+    imagePath: "/assets/reviews/sparks-and-sons-llc.jpeg",
     name: "Daniel Sparks",
-    company: "Sparks and Sons Handyman Services",
+    company: "Sparks and Sons LLC",
     url: "https://sparksandsons.com",
     review:
       "Upwards Ads has been a game changer for my business. Craig Swanson showed me how valuable Facebook Ads and online marketing can be for my business. I highly recommend them to anyone who may be skeptical or unsure about online marketing.",
