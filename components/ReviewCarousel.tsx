@@ -37,7 +37,7 @@ export function ReviewCarousel() {
                 </div>
                 <div className="ml-4 flex flex-col text-end">
                   <h3 className="mb-1 text-xl font-bold text-white">{name}</h3>
-                  <Link href={url}>
+                  <Link href={url} target="_blank">
                     <h4 className="mb-2 text-gray-300 hover:underline">{company}</h4>
                   </Link>
                 </div>
