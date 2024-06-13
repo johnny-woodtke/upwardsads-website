@@ -1,12 +1,13 @@
 type GtagCommand = "event"
 
-type GtagParameters<T extends GtagCommand> = T extends "event" ? "contact_form_submit" : never
+type GtagEvent = "contact_form_submit"
 
-type EventParameters<T extends GtagCommand> = T extends "event"
+type GtagParameters<T extends GtagCommand> = T extends "event" ? GtagEvent : never
+
+type EventParameters<T extends GtagCommand, K extends GtagEvent = GtagParameters<T>> = T extends "event"
   ? {
-      event_category: "Contact"
-      event_label: "Contact Form"
-    }
+      contact_form_submit: { event_category: "Contact"; event_label: "Contact Form" }
+    }[K]
   : never
 
 declare global {
