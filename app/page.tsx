@@ -96,7 +96,7 @@ export default function App() {
 
       <section className="relative w-full xl:h-[750px]">
         <div className="absolute top-[-100px] h-0 w-0" id="contact" />
-        <div className="mx-auto w-full max-w-screen-md py-8 lg:p-16">
+        <div className="mx-auto w-full max-w-screen-md py-8 max-sm:px-8 lg:p-16">
           <div className="mx-auto flex h-full w-full flex-col items-center justify-center">
             <h2 className="mb-8 w-full  text-start text-3xl font-bold tracking-tight sm:text-4xl xl:text-5xl">
               Get started
