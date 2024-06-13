@@ -4,13 +4,18 @@ type GtagParameters<T extends GtagCommand> = T extends "event" ? "contact_form_s
 
 type EventParameters<T extends GtagCommand> = T extends "event"
   ? {
-      page: `/${string}`
+      event_category: "Contact"
+      event_label: "Contact Form"
     }
   : never
 
 declare global {
   interface Window {
-    gtag<T extends GtagCommand>(command: T, eventName: GtagParameters<T>, eventParameters: EventParameters<T>): void
+    gtag<T extends GtagCommand>(
+      command: T,
+      eventName: GtagParameters<T>,
+      ...parameters: EventParameters<T> extends never ? [] : [EventParameters<T>]
+    ): void
   }
 }
 
