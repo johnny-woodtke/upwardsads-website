@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
+import { usePathname } from "next/navigation"
 import { useForm } from "react-hook-form"
 
 import { handleContactSubmission } from "@/app/contact/actions"
@@ -19,28 +20,33 @@ type EnterDetailsProps = Readonly<{
   onFinish: () => void
 }>
 
+const defaultValues = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  message: "",
+}
+
 export function EnterDetails({ onFinish }: EnterDetailsProps) {
   const form = useForm({
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
+    defaultValues,
     resolver: zodResolver(enterDetailsSchema()),
   })
   const {
     handleSubmit,
     control,
     formState: { isValid, isSubmitting },
+    reset,
   } = form
 
   const { toast } = useToast()
 
   const onSubmit = async (data: Readonly<EnterDetailsValues>) => {
+    // submit the form
     const res = await handleContactSubmission(data)
 
+    // show a toast message
     const toastProps: Parameters<typeof toast>[0] = {
       title: "Thank you for contacting us",
       description: "We will get back to you as soon as possible.",
@@ -53,6 +59,12 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
     }
     toast(toastProps)
 
+    // reset the form if successful
+    if (res.ok) {
+      reset(defaultValues)
+    }
+
+    // finish the form
     onFinish()
   }
 

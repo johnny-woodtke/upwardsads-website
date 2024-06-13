@@ -1,5 +1,6 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { ReactNode } from "react"
 
 import { useContactFormContext } from "./ContactFormProvider"
@@ -12,8 +13,19 @@ export enum Step {
 export function MultiStepContactForm() {
   const { currentStep } = useContactFormContext()
 
+  const pathname = usePathname() as `/${string}`
+
   const stepElements: Record<Step, ReactNode> = {
-    [Step.EnterDetails]: <EnterDetails onFinish={() => {}} />,
+    [Step.EnterDetails]: (
+      <EnterDetails
+        onFinish={() => {
+          // record google analytics event
+          window.gtag("event", "contact_form_submit", {
+            page: pathname,
+          })
+        }}
+      />
+    ),
   }
 
   return stepElements[currentStep]
