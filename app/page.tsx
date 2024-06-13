@@ -104,7 +104,7 @@ export default function App() {
               Get started
             </h2>
             <div className="flex w-full flex-col items-center justify-center">
-              <p className="mb-8 w-full text-gray-500 lg:mb-12">
+              <p className="mb-8 w-full text-start tracking-tight text-gray-500 sm:text-lg lg:mb-12 xl:text-xl">
                 Ready to take your business opportunities to the next level? Contact us today to schedule a free
                 consultation.
               </p>
