@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import { ContactFormProvider, MultiStepContactForm } from "@/components/Contact"
 import { ParallaxImage } from "@/components/ParallaxImage"
 import { ReviewCarousel } from "@/components/ReviewCarousel"
