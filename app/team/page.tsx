@@ -20,9 +20,7 @@ export default function Team() {
     <section className="w-full max-w-screen-xl">
       <div className="mx-auto h-full w-full p-8 lg:p-12">
         <div className="flex h-full w-full flex-col items-center justify-center">
-          <h2 className="mb-8 w-full text-start text-3xl font-bold tracking-tight sm:text-4xl lg:mb-12 xl:text-5xl">
-            The Team
-          </h2>
+          <h2 className="mb-8 w-full text-start text-3xl font-bold tracking-tight sm:text-4xl xl:text-5xl">The Team</h2>
           <p className="mb-8 w-full text-start tracking-tight text-gray-500 sm:text-lg lg:mb-12 xl:text-xl">
             {DESCRIPTION}
           </p>

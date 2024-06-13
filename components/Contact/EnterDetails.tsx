@@ -113,7 +113,7 @@ export function EnterDetails({ onFinish }: EnterDetailsProps) {
             name="message"
             control={control}
             label="Message (optional)"
-            placeholder="Your message here..."
+            placeholder="How can we help you?"
             inputMode="text"
           />
 

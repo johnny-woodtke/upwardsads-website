@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { ContactFormProvider, MultiStepContactForm } from "@/components/Contact"
 import { ParallaxImage } from "@/components/ParallaxImage"
 import { ReviewCarousel } from "@/components/ReviewCarousel"
 import { TeamLink } from "@/components/TeamLink"
@@ -72,7 +73,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="relative w-full xl:h-[750px]">
+      <section className="relative w-full border-b border-primary/10 xl:h-[700px]">
         <div className="absolute top-[-100px] h-0 w-0" id="services" />
         <div className="mx-auto w-full max-w-screen-xl p-8 lg:p-16">
           <div className="flex h-full w-full flex-col items-center justify-center">
@@ -95,7 +96,27 @@ export default function App() {
         </div>
       </section>
 
-      {/* Add get started today section */}
+      <section className="relative w-full xl:h-[750px]">
+        <div className="absolute top-[-100px] h-0 w-0" id="contact" />
+        <div className="mx-auto w-full max-w-screen-md py-8 lg:p-16">
+          <div className="mx-auto flex h-full w-full flex-col items-center justify-center">
+            <h2 className="mb-8 w-full  text-start text-3xl font-bold tracking-tight sm:text-4xl xl:text-5xl">
+              Get started
+            </h2>
+            <div className="flex w-full flex-col items-center justify-center">
+              <p className="mb-8 w-full text-gray-500 lg:mb-12">
+                Ready to take your business opportunities to the next level? Contact us today to schedule a free
+                consultation.
+              </p>
+              <div className="w-full">
+                <ContactFormProvider>
+                  <MultiStepContactForm />
+                </ContactFormProvider>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer className="w-full py-10"></footer>
     </>

@@ -27,7 +27,7 @@ export function ReviewCarousel() {
             <div className="mx-2 flex flex-col items-center justify-center text-center">
               <div className="mb-4 flex h-10 w-full items-center justify-center rounded-full p-1.5 text-blue-700">
                 {[...Array(stars)].map((_, i) => (
-                  <Star key={i} className="mx-1" />
+                  <Star key={i} className="mx-1 fill-current" />
                 ))}
               </div>
 
