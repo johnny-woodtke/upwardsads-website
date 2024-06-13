@@ -1,3 +1,6 @@
+import { cva } from "class-variance-authority"
+import { ReactNode } from "react"
+
 import { ContactFormProvider, MultiStepContactForm } from "@/components/Contact"
 import { ParallaxImage } from "@/components/ParallaxImage"
 import { ReviewCarousel } from "@/components/ReviewCarousel"
@@ -119,4 +122,36 @@ export default function App() {
       <footer className="w-full py-10"></footer>
     </>
   )
+}
+
+const sectionVariants = cva("relative flex w-full xl:h-[750px]", {
+  variants: {
+    size: {
+      sm: "xl:h-[400px]",
+      lg: "xl:h-[750px]",
+    },
+    layout: {
+      full: "xl:h-[750px]",
+      half: "xl:h-[400px]",
+    },
+    border: {
+      true: "border-b border-primary/10",
+      false: "",
+    },
+  },
+  defaultVariants: {
+    size: "lg",
+    layout: "full",
+    border: true,
+  },
+})
+
+type SectionProps = Readonly<
+  {
+    children: ReactNode
+  } & Parameters<typeof sectionVariants>[0]
+>
+
+function Section({ children, ...props }: SectionProps) {
+  return <section className={sectionVariants(props)}>{children}</section>
 }
