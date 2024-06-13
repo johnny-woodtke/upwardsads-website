@@ -20,6 +20,7 @@ export function MultiStepContactForm() {
       <EnterDetails
         onFinish={() => {
           // record google analytics event
+          console.log("window.gtag", window.gtag)
           window.gtag("event", "contact_form_submit", {
             page: pathname,
           })
