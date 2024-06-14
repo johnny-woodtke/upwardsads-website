@@ -55,7 +55,7 @@ export default function App() {
           overflow: true,
           className: "overflow-hidden max-sm:hidden",
           children: (
-            <div className="absolute -top-20 h-[700px] w-full xl:-top-32 xl:h-[900px]">
+            <div className="absolute -top-24 h-[700px] w-full xl:-top-32 xl:h-[900px]">
               <ParallaxImage alt="About us" src="/assets/about.jpeg" />
             </div>
           ),
