@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils"
 
 const padding = {
   none: "",
-  default: "pb-12 pt-8 md:pb-20 md:pt-12 xl:pb-24",
-  mirror: "py-8 md:py-20 xl:py-24",
+  default: "pb-12 pt-8 md:pb-20 md:pt-12 xl:pb-28",
+  mirror: "py-8 md:py-20 xl:py-28",
 }
 
 const sectionVariants = cva("relative flex w-full", {
@@ -79,7 +79,7 @@ export function Section({ children, half, left, right, ...props }: SectionProps)
   const { children: rightChildren, ...rightProps } = right
 
   return (
-    <section className={cn("flex w-full", sectionVariants({ padding: "none", ...props }))}>
+    <section className={sectionVariants({ padding: "none", ...props })}>
       {children}
       <div className={halfVariants(leftProps)}>{leftChildren}</div>
       <div className={halfVariants(rightProps)}>{rightChildren}</div>
