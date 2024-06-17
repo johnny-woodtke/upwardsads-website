@@ -9,6 +9,8 @@ const padding = {
   mirror: "py-8 md:py-20 xl:py-28",
 }
 
+const xPadding = "px-6 sm:px-8"
+
 const sectionVariants = cva("relative flex w-full", {
   variants: {
     padding,
@@ -25,14 +27,17 @@ const sectionVariants = cva("relative flex w-full", {
 
 const halfVariants = cva("relative w-1/2", {
   variants: {
-    padding: Object.keys(padding).reduce<typeof padding>((acc, key) => {
-      const k = key as keyof typeof padding
-      if (k === "none") {
+    padding: Object.keys(padding).reduce<typeof padding>(
+      (acc, key) => {
+        const k = key as keyof typeof padding
+        if (k === "none") {
+          return acc
+        }
+        acc[k] = cn(padding[k], xPadding)
         return acc
-      }
-      acc[k] = cn(padding[k], "px-8")
-      return acc
-    }, padding),
+      },
+      {} as typeof padding
+    ),
     overflow: {
       true: "",
       false: "max-w-screen-sm",
@@ -70,7 +75,7 @@ export function Section({ children, half, left, right, ...props }: SectionProps)
   if (!half) {
     return (
       <section className={sectionVariants(props)}>
-        <div className="mx-auto w-full max-w-screen-xl px-8">{children}</div>
+        <div className={cn("mx-auto w-full max-w-screen-xl", xPadding)}>{children}</div>
       </section>
     )
   }
