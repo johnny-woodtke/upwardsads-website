@@ -37,10 +37,9 @@ export default function App() {
               </h2>
 
               <p className="text-start text-gray-500 sm:text-justify sm:text-lg">
-                &quot;Upwards Ads is a digital marketing agency that specializes in helping small businesses grow. We
-                are dedicated to helping you reach your business goals and increase your revenue. Our team of experts
-                will work with you to create a custom marketing strategy that will help you stand out from the
-                competition.&quot;
+                Upwards Ads is a digital marketing agency that specializes in helping small businesses grow. We are
+                dedicated to helping you reach your business goals and increase your revenue. Our team of experts will
+                work with you to create a custom marketing strategy that will help you stand out from the competition.
               </p>
 
               <div className="mt-12 flex items-end justify-end md:mt-24">
