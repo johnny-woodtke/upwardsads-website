@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const padding = {
   none: "",
   default: "pb-12 pt-8 md:pb-20 md:pt-12 xl:pb-28",
-  mirror: "py-8 md:py-20 xl:py-28",
+  mirror: "py-12 md:py-20 xl:py-28",
 }
 
 const xPadding = "px-6 sm:px-8"

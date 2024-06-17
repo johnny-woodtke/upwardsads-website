@@ -11,7 +11,7 @@ import { DESCRIPTION, LP_GRID_ITEMS, TITLE } from "./data"
 export default function App() {
   return (
     <>
-      <Section padding="mirror" className="py-12">
+      <Section padding="mirror">
         <div className="flex w-full flex-col items-center justify-center text-center">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight sm:text-5xl xl:text-6xl">
             {TITLE}
@@ -28,7 +28,6 @@ export default function App() {
       <Section
         className="xl:h-[650px]"
         half
-        padding="none"
         left={{
           className: "max-sm:w-full ml-auto md:flex md:justify-end",
           children: (
