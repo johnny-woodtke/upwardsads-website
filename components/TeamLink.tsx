@@ -42,7 +42,7 @@ export function TeamLink() {
         <Avatar src="/assets/craig-swanson.png" />
         <div className="ml-4 flex flex-col justify-start text-left max-sm:ml-3 md:h-20">
           <p className="pr-2 text-gray-300 md:text-lg">Craig Swanson</p>
-          <p className="text-sm tracking-tight text-gray-300 md:text-base">CEO</p>
+          <p className="text-sm tracking-tight text-gray-300 md:text-base">Founder</p>
           <MeetTheTeam
             {...{
               isHidden,
