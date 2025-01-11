@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
     socials: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/sam-polizzi-123456/",
+        url: "https://www.linkedin.com/in/corbyn-mueller-123456/",
       },
     ],
   },
