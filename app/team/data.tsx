@@ -20,7 +20,7 @@ export const teamMembers: TeamMember[] = [
     socials: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/craig-swanson-123456/",
+        url: "https://www.linkedin.com/in/craigfswanson/",
       },
     ],
   },
@@ -44,11 +44,12 @@ export const teamMembers: TeamMember[] = [
     name: "Corbyn Mueller",
     role: "COO",
     image: "/assets/corbyn-mueller.jpeg",
-    bio: "Corbyn is the COO of Upwards Ads. He has a degreee in sales and marketing as well as a background in business development and is dedicated to helping small businesses succeed.",
+    bio: "Corbyn is the COO of Upwards Ads. He has a degree in sales and marketing as well as a background in business development and is dedicated to helping small businesses succeed.",
     socials: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/corbyn-mueller-123456/",
+        url: "https://www.linkedin.com/in/corbyn-mueller/",
+
       },
     ],
   },
