@@ -44,7 +44,7 @@ export const teamMembers: TeamMember[] = [
     name: "Corbyn Mueller",
     role: "COO",
     image: "/assets/sam-polizzi.jpeg",
-    bio: "Sam is the COO of Upwards Ads. She has a background in business development and is dedicated to helping small businesses succeed.",
+    bio: "Corbyn is the COO of Upwards Ads. He has a background in business development and is dedicated to helping small businesses succeed.",
     socials: [
       {
         name: "LinkedIn",
