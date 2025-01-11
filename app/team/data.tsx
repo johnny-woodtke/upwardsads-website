@@ -49,6 +49,7 @@ export const teamMembers: TeamMember[] = [
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/corbyn-mueller/",
+
       },
     ],
   },
