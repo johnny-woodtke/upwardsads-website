@@ -13,7 +13,7 @@ export type TeamMember = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Craig Swanson",
+    name: "Craigafor Swanson",
     role: "CEO",
     image: "/assets/craig-swanson.png",
     bio: "Craig is the CEO of Upwards Ads. He has over 10 years of experience in digital marketing and has helped hundreds of small businesses grow.",
